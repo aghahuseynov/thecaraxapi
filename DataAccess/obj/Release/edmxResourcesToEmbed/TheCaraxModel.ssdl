@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TheCaraxDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="VisualId" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VisualId" Type="int" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenGuid" />
+    </Key>
+    <Property Name="TokenGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TokenEndDateTime" Type="datetime" Nullable="false" />
+    <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="VisualId" Type="int" />
+    <Property Name="UserLevel" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDateTime" Type="datetime" />
+    <Property Name="UpdatedBy" Type="datetime" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDepartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Department_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CompanyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Token" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Token">
+        <PropertyRef Name="CompanyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Token" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Token">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Token" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Token">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Token" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Token">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CompanyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDepartment_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="UserDepartment" Type="Self.UserDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UserDepartment">
+        <PropertyRef Name="CompanyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDepartment_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="UserDepartment" Type="Self.UserDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UserDepartment">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TheCaraxDbModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDepartment" EntityType="Self.UserDepartment" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Department_Company" Association="Self.FK_Department_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_Company" Association="Self.FK_Token_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Token" EntitySet="Token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_Department" Association="Self.FK_Token_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Token" EntitySet="Token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_User" Association="Self.FK_Token_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Token" EntitySet="Token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_User1" Association="Self.FK_Token_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Token" EntitySet="Token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Company" Association="Self.FK_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Department" Association="Self.FK_User_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDepartment_Company" Association="Self.FK_UserDepartment_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="UserDepartment" EntitySet="UserDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDepartment_Department" Association="Self.FK_UserDepartment_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="UserDepartment" EntitySet="UserDepartment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\Business.deps.json
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\Business.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\Business.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\DataAccess.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\EntityFramework.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\DataAccess.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\DataAccess.dll.config
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\bin\Release\netcoreapp2.2\EntityFramework.xml
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.csprojAssemblyReference.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.csproj.CoreCompileInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.AssemblyInfoInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.AssemblyInfo.cs
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.csproj.CopyComplete
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Release\netcoreapp2.2\Business.pdb

@@ -4,4 +4,19 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="DataAccess">
+      <HintPath>..\DataAccess\bin\Release\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\DataAccess\bin\Release\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\DataAccess\bin\Release\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Models">
+      <HintPath>..\Models\bin\Release\netcoreapp2.2\Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

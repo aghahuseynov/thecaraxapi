@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b146e353e114b20a0a91845fe876c41" Name="Diagram1">
+        <EntityTypeShape EntityType="TheCaraxDbModel.Company" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.Department" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.Token" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.User" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.UserDepartment" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheCaraxDbModel.UserTokenInfo" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_Department_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_Token_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_User_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_UserDepartment_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_UserTokenInfo_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_Token_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_User_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_UserDepartment_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_UserTokenInfo_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_Token_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TheCaraxDbModel.FK_UserTokenInfo_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,9 @@
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\bin\Release\netcoreapp2.2\Models.deps.json
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\bin\Release\netcoreapp2.2\Models.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\bin\Release\netcoreapp2.2\Models.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.AssemblyInfoInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.AssemblyInfo.cs
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2\Models.csprojAssemblyReference.cache
