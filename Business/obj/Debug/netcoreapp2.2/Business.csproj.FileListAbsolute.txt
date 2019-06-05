@@ -1,3 +1,0 @@
-C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Debug\netcoreapp2.2\Business.csproj.CoreCompileInputs.cache
-C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Debug\netcoreapp2.2\Business.AssemblyInfoInputs.cache
-C:\Users\agha\source\repos\RouteaxRepo\thecarax\Business\obj\Debug\netcoreapp2.2\Business.AssemblyInfo.cs
