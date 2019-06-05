@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +14,7 @@ namespace Business
     {
         public static UserTokenInfo Get(Guid token)
         {
-            using (var db = new DataAccess.Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
                 var singleToken = db.Tokens?.FirstOrDefault(q => q.TokenGuid == token);
                 if (singleToken == null)
@@ -33,9 +32,9 @@ namespace Business
 
         public static List<UserTokenInfo> GetTokens(int userId, string userName)
         {
-            using (var db = new DataAccess.Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
-                var userTokenInfo = db.UserTokenInfoes.Where(q => q.UserId == userId && q.Username == userName).ToList();
+                var userTokenInfo = db.UserTokenInfos.Where(q => q.UserId == userId && q.Username == userName).ToList();
 
                 var result = new List<UserTokenInfo>();
 
@@ -62,9 +61,9 @@ namespace Business
 
         public static bool Update(Guid tokenGuid, DateTime tokenEndDateTime)
         {
-            using (var db = new Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
-                var userTokenInfo = db.UserTokenInfoes?.FirstOrDefault(q => q.TokenGuid == tokenGuid);
+                var userTokenInfo = db.UserTokenInfos?.FirstOrDefault(q => q.TokenGuid == tokenGuid);
                 if (userTokenInfo == null)
                 {
                     return false;
@@ -76,7 +75,7 @@ namespace Business
 
         public static bool Create(Models.Users.UserTokenInfo tokenInfo)
         {
-            DataAccess.UserTokenInfo userTokenInfo = new DataAccess.UserTokenInfo
+            var userTokenInfo = new Models.Users.UserTokenInfo
             {
                 CompanyCode =  tokenInfo.CompanyCode,
                 CreatedDateTime =  DateTime.Now,
@@ -87,9 +86,9 @@ namespace Business
                 Username =  tokenInfo.Username
             };
 
-            using (var db = new Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
-                db.UserTokenInfoes.Add(userTokenInfo);
+                db.UserTokenInfos.Add(userTokenInfo);
                return db.SaveChanges() > 0;
             }
         }

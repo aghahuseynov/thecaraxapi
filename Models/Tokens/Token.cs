@@ -11,9 +11,15 @@ namespace Models.Tokens
     {
         [Key]
         public Guid TokenGuid { get; set; }
+
+        [Column(TypeName = "datetime")]
         public  DateTime TokenEndDateTime { get; set; }
-        public  DateTime CreateDateTime { get; set; }
-        public  string Username { get; set; }
+
+        [Column(TypeName = "datetime")]
+        public DateTime CreateDateTime { get; set; }
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string Username { get; set; }
 
 
         [ForeignKey("User")]
@@ -21,12 +27,14 @@ namespace Models.Tokens
         public User User { get; set; }
 
         [ForeignKey("Department")]
-        public int DepartmentId { get; set; }
+        [Column(TypeName = "nvarchar(20)")]
+        public string DepartmentCode { get; set; }
         public  Department Department { get; set; }
 
 
         [ForeignKey("CompanyCode")]
-        public int CompanyCode { get; set; }
+        [Column(TypeName = "nvarchar(20)")]
+        public string CompanyCode { get; set; }
         public  Company Company { get; set; }
 
     }

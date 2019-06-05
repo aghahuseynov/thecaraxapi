@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace Business
     {
         public static List<Models.Users.UserDepartment> GetListByUser(int userId)
         {
-            using (var db = new Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
                 return db.UserDepartments.Where(q => q.UserId == userId)?.Select(q => new UserDepartment
                 {

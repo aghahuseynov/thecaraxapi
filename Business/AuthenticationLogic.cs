@@ -61,12 +61,13 @@ namespace Business
 
         public static TokenResult GetToken(string username, string password, string departmentCode)
         {
-            return  GetUserTokenGuid(username, password, departmentCode).FirstOrDefault(x => x.DepartmentCode == departmentCode)
+            return GetUserTokenGuid(username, password, departmentCode)
+                .FirstOrDefault(x => x.DepartmentCode == departmentCode);
         }
 
         private static List<Models.Users.TokenResult> GetUserTokenGuid(string username, string password, string departmentCode)
         {
-            using (var db = new Entities())
+            using (var db = new DataAccess.CaraxEntitiy())
             {
                 var userDepartments = db.UserDepartments.Where(q => q.Username == username && q.DepartmentCode == departmentCode);
 

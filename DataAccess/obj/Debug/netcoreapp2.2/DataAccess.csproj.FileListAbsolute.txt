@@ -1,0 +1,4 @@
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csprojAssemblyReference.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfoInputs.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfo.cs
