@@ -68,7 +68,7 @@ namespace Services
             services.AddSwaggerGen(g => {
                 g.SwaggerDoc("v2", new Info
                 {
-                    Title = "Rent A Car REST API",
+                    Title = "TheCarax REST API",
                     Version = "0.1",
                     Description = "Araç Kiralama Servisleri",
                     Contact = new Contact { Name = "Agha Huseynov", Email = "agahuseynov@hotmail.com", Url = "http://www.routeax.com" },

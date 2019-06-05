@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,14 @@ namespace DataAccess
         public DbSet<Models.Users.UserDepartment> UserDepartments { get; set; }
         public DbSet<Models.Visual> Visuals { get; set; }
         public DbSet<Models.Customers.Customer> Customers { get; set; }
-        public  DbSet<Models.Tokens.Token> Tokens { get; set; }
+        public DbSet<Models.Tokens.Token> Tokens { get; set; }
+        public DbSet<Models.Cars.BrandModel> BrandModels { get; set; }
+        public DbSet<Models.Cars.Brand> Brands { get; set; }
+
+        public DbSet<Models.Cars.CarProperty> CarProperties { get; set; }
+        public DbSet<Models.Cars.Car> Cars { get; set; }
+        public DbSet<Models.Cars.CarInService> CarInServices { get; set; }
+        public DbSet<Models.Cars.CarService> CarServices { get; set; }
 
     }
 }

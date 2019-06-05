@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using Models.Cars;
 using Models.Customers;
 using Models.Interfaces;
 using Models.Tokens;
@@ -48,6 +49,9 @@ namespace Models
         public ICollection<Token> Tokens { get; set; }
         public ICollection<Visual> Visuals { get; set; }
         public ICollection<UserTokenInfo> UserTokenInfo { get; set; }
+
+        public ICollection<Car> Cars { get; set; }
+        public ICollection<CarService> CarServices { get; set; }
 
 
 
