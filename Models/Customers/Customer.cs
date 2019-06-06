@@ -7,17 +7,17 @@ using Models.Interfaces;
 
 namespace Models.Customers
 {
-    public class Customer : IUserInfo, IDateTimeInfo, IDepartmentRelationship, ICompanyRelationship
+    public class Customer : IUserInfo, IDateTimeInfo, IDepartmentRelationship, ICompanyRelationship,ISoftDelete
     {
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "nvarchar(50)")]
         public string Name { get; set; }
-        [Column(TypeName = "nvarchar(50)")]
 
+        [Column(TypeName = "nvarchar(50)")]
         public string Surname { get; set; }
 
-        public int Gender { get; set; }
+        public int? Gender { get; set; }
 
         [Column(TypeName = "datetime")]
         public  DateTime? BirthOfDateTime { get; set; }
@@ -59,5 +59,6 @@ namespace Models.Customers
         public Department Department { get; set; }
         public string CompanyCode { get; set; }
         public Company Company { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -3,6 +3,11 @@ namespace Models
 {
     public class Enums
     {
+        public enum Gender
+        {
+            Male = 0,
+            FeMale = 1
+        }
         public enum UserLevel
         {
             SystemOwner = 0,
@@ -41,7 +46,7 @@ namespace Models
         }
         public enum Classes
         {
-           
+
         }
     }
 }
