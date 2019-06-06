@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Models.Interfaces;
+using Models.Reservations;
 
 namespace Models.Cars
 {
@@ -29,6 +30,7 @@ namespace Models.Cars
 
         //========== Navigation Properties ========== 
         public ICollection<CarInService> CarInServices { get; set; }
+        public ICollection<ServicesInReservation> ServicesInReservations { get; set; }
 
     }
 }

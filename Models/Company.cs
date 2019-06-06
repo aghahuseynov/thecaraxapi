@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Models.Cars;
 using Models.Customers;
 using Models.Interfaces;
+using Models.Reservations;
 using Models.Tokens;
 using Models.Users;
 
@@ -50,5 +51,8 @@ namespace Models
         public ICollection<Car> Cars { get; set; }
         public ICollection<CarService> CarServices { get; set; }
 
+        public ICollection<Reservations.Reservation> Reservations { get; set; }
+        
+        public ICollection<ServicesInReservation> ServicesInReservations { get; set; }
     }
 }

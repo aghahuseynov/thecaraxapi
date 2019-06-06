@@ -48,5 +48,12 @@ namespace Models
         {
 
         }
+        
+        public enum ReservationTypes
+        {
+            Pre = 0,
+            Full =1 ,
+            Deliver = 2
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Services.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -275,11 +275,13 @@ namespace Services.Migrations
                     b.Property<string>("FirstPhone")
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("Gender");
+                    b.Property<int?>("Gender");
 
                     b.Property<bool>("InBlackList");
 
                     b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(50)");
@@ -351,6 +353,91 @@ namespace Services.Migrations
                     b.HasIndex("CompanyCode");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("Models.Reservations.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("BeginDateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("CarId");
+
+                    b.Property<string>("CompanyCode");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedDateTime");
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<string>("DeliveryLocation")
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("DepartmentCode");
+
+                    b.Property<DateTime>("EndDateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<bool>("IsApproval");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("ReservationStatus");
+
+                    b.Property<string>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("CompanyCode");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("DepartmentCode");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("Models.Reservations.ServicesInReservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CarSericeId");
+
+                    b.Property<string>("CompanyCode");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedDateTime");
+
+                    b.Property<string>("DepartmentCode");
+
+                    b.Property<int>("ReservationId");
+
+                    b.Property<string>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedDateTime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarSericeId");
+
+                    b.HasIndex("CompanyCode");
+
+                    b.HasIndex("DepartmentCode");
+
+                    b.HasIndex("ReservationId");
+
+                    b.ToTable("ServicesInReservation");
                 });
 
             modelBuilder.Entity("Models.Tokens.Token", b =>
@@ -638,6 +725,48 @@ namespace Services.Migrations
                     b.HasOne("Models.Company", "Company")
                         .WithMany("Departments")
                         .HasForeignKey("CompanyCode");
+                });
+
+            modelBuilder.Entity("Models.Reservations.Reservation", b =>
+                {
+                    b.HasOne("Models.Cars.Car", "Car")
+                        .WithMany("Reservations")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Models.Company", "Company")
+                        .WithMany("Reservations")
+                        .HasForeignKey("CompanyCode");
+
+                    b.HasOne("Models.Customers.Customer", "Customer")
+                        .WithMany("Reservations")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Models.Department", "Department")
+                        .WithMany("Reservations")
+                        .HasForeignKey("DepartmentCode");
+                });
+
+            modelBuilder.Entity("Models.Reservations.ServicesInReservation", b =>
+                {
+                    b.HasOne("Models.Cars.CarService", "CarService")
+                        .WithMany("ServicesInReservations")
+                        .HasForeignKey("CarSericeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Models.Company", "Company")
+                        .WithMany("ServicesInReservations")
+                        .HasForeignKey("CompanyCode");
+
+                    b.HasOne("Models.Department", "Department")
+                        .WithMany("ServicesInReservations")
+                        .HasForeignKey("DepartmentCode");
+
+                    b.HasOne("Models.Reservations.Reservation", "Reservation")
+                        .WithMany("ServicesInReservations")
+                        .HasForeignKey("ReservationId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Models.Tokens.Token", b =>

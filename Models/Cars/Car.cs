@@ -69,6 +69,8 @@ namespace Models.Cars
         // ================ Navigation Properties ====================
         public ICollection<CarInService> CarInServices { get; set; }
         public ICollection<CarProperty> CarProperties { get; set; }
+        public ICollection<Reservations.Reservation> Reservations { get; set; }
+
 
     }
 }

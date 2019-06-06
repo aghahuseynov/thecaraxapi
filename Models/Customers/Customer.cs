@@ -60,5 +60,10 @@ namespace Models.Customers
         public string CompanyCode { get; set; }
         public Company Company { get; set; }
         public bool IsDeleted { get; set; } = false;
+        
+        
+        
+//        ========== Navigation Properties ========= 
+        public ICollection<Reservations.Reservation>  Reservations { get; set; }
     }
 }

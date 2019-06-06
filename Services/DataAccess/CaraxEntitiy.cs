@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Models.Reservations;
 
 namespace DataAccess
 {
@@ -29,6 +30,12 @@ namespace DataAccess
         public DbSet<Models.Cars.Car> Cars { get; set; }
         public DbSet<Models.Cars.CarInService> CarInServices { get; set; }
         public DbSet<Models.Cars.CarService> CarServices { get; set; }
+        
+        public DbSet<Reservation> Reservations { get; set; }
+        
+        public ServicesInReservation ServicesInReservations { get; set; }
+        
+       
 
     }
 }
