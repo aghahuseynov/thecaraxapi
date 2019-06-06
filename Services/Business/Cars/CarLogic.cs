@@ -73,6 +73,8 @@ namespace Services.Business.Cars
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
+                var userInfo = AuthenticationLogic.CheckTokenInfo(token);
+
                 var findedCar = db.Cars.FirstOrDefault(q => q.Id == carId);
                 if (findedCar == null)
                 {
@@ -80,6 +82,8 @@ namespace Services.Business.Cars
                 }
 
                 findedCar.IsDeleted = true;
+                findedCar.UpdatedDateTime = DateTime.Now;
+                findedCar.UpdatedBy = userInfo.Username;
                 db.Cars.Update(findedCar);
                 return await db.SaveChangesAsync() > 0;
             }
@@ -87,6 +91,7 @@ namespace Services.Business.Cars
 
         public static async Task<bool> BeMaintenance(Guid token, int carId, bool maintenance)
         {
+            var userInfo = AuthenticationLogic.CheckTokenInfo(token);
             using (var db = new DataAccess.CaraxEntitiy())
             {
                 var findedCar = db.Cars.FirstOrDefault(q => q.Id == carId);
@@ -95,6 +100,8 @@ namespace Services.Business.Cars
                     return false;
                 }
                 findedCar.Maintenance = maintenance;
+                findedCar.UpdatedDateTime = DateTime.Now;
+                findedCar.UpdatedBy = userInfo.Username;
                 db.Cars.Update(findedCar);
                 return await db.SaveChangesAsync() > 0;
             }
@@ -109,7 +116,11 @@ namespace Services.Business.Cars
                 {
                     return false;
                 }
+                var userInfo = AuthenticationLogic.CheckTokenInfo(token);
+
                 findedCar.Crash = crash;
+                findedCar.UpdatedDateTime = DateTime.Now;
+                findedCar.UpdatedBy = userInfo.Username;
                 db.Cars.Update(findedCar);
                 return await db.SaveChangesAsync() > 0;
             }
