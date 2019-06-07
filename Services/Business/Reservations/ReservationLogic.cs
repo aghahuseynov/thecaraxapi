@@ -68,18 +68,5 @@ namespace Services.Business.Reservations
             }
         }
 
-        public static async Task<bool> UpdateStatus(Guid token, Models.Reservations.Reservation reservation)
-        {
-            var userInfo = AuthenticationLogic.CheckTokenInfo(token);
-
-            using (var db = new DataAccess.CaraxEntitiy())
-            {
-                var find = db.Reservations.FirstOrDefault(q => q.Id == reservation.Id);
-                find.ReservationStatus = reservation.ReservationStatus;
-                db.Reservations.Update(reservation);
-                return await db.SaveChangesAsync() > 0;
-            }
-        }
-
     }
 }

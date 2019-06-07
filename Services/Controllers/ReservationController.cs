@@ -1,5 +1,7 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Services.Business.Reservations;
 
 namespace Services.Controllers
 {
@@ -8,35 +10,49 @@ namespace Services.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Models.Reservations.Reservation reservations)
         {
-            return Ok();
+            var isSuccess = await ReservationLogic.Create(GetToken(), reservations);
+            return Ok(isSuccess);
         }
 
-        [HttpGet("GetByReservation")]
-        public async Task<IActionResult> GetByReservation(int carId)
+        [HttpGet("GetByCarId")]
+        public async Task<IActionResult> GetByCarId(int carId)
         {
-            return Ok();
+            var list = await ReservationLogic.GetByCarId(GetToken(), GetDepartmentCode(), carId);
+            if (!list.Any())
+            {
+                return NotFound();
+            }
+            return Ok(list);
         }
-        
+
         [HttpGet("GetByCustomer")]
         public async Task<IActionResult> GetByCustomer(int customerId)
         {
-            return Ok();
+            var list = await ReservationLogic.GetByCustomerId(GetToken(), GetDepartmentCode(), customerId);
+            if (!list.Any())
+            {
+                return NotFound();
+            }
+            return Ok(list);
         }
-        
+
         [HttpGet("GetList")]
-        public async Task<IActionResult> GetList()
+        public async Task<IActionResult> GetList(bool isApproval = false)
         {
+            var list = await ReservationLogic.GetList(GetToken(), GetDepartmentCode(), isApproval);
+            if (!list.Any())
+            {
+                return NotFound();
+            }
             return Ok();
         }
 
-        [HttpPut("ChangeStatus")]
-        public async Task<IActionResult> ChangeStatus(int statusId)
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update([FromBody] Models.Reservations.Reservation reservation)
         {
-            return Ok();
+            var isSuccess = await ReservationLogic.Update(GetToken(), reservation);
+            return Ok(isSuccess);
         }
-        
-        
-        
-        
+
     }
 }
