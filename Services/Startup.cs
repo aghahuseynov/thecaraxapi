@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sentry;
 
 namespace Services
 {
@@ -109,6 +111,13 @@ namespace Services
                 s.SwaggerEndpoint("/swagger/v2/swagger.json", "The Carax");
             });
 
+            app.UseExceptionHandler(a => a.Run(async context =>
+            {
+                var feature = context.Features.Get<IExceptionHandlerPathFeature>();
+                var exception = feature.Error;
+                SentrySdk.CaptureException(exception);
+
+            }));
         }
     }
 }

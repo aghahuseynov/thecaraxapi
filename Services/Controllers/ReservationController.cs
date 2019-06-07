@@ -53,6 +53,5 @@ namespace Services.Controllers
             var isSuccess = await ReservationLogic.Update(GetToken(), reservation);
             return Ok(isSuccess);
         }
-
     }
 }

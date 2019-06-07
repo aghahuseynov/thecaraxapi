@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "e0458e531dfb95a4dbf1bebcf3064495ef61a139"
+    "signature": "3d04c1edc8bc8f57d43ce04200e37fdbe267ecf1"
   },
   "compilationOptions": {
     "defines": [
@@ -28,6 +28,7 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
+          "Sentry.AspNetCore": "1.2.0",
           "Swashbuckle.AspNetCore": "4.0.1",
           "Models": "1.0.0.0"
         },
@@ -205,6 +206,79 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Sentry/1.2.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
+          "Sentry.PlatformAbstractions": "1.0.0",
+          "Sentry.Protocol": "1.0.6",
+          "System.Collections.Immutable": "1.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sentry.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Sentry.dll": {}
+        }
+      },
+      "Sentry.AspNetCore/1.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Hosting": "2.2.0",
+          "Microsoft.Extensions.Configuration.Binder": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection": "2.2.0",
+          "Sentry.Extensions.Logging": "1.2.0",
+          "System.Diagnostics.DiagnosticSource": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sentry.AspNetCore.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Sentry.AspNetCore.dll": {}
+        }
+      },
+      "Sentry.Extensions.Logging/1.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Configuration": "2.2.0",
+          "Sentry": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sentry.Extensions.Logging.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Sentry.Extensions.Logging.dll": {}
+        }
+      },
+      "Sentry.PlatformAbstractions/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Sentry.PlatformAbstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Sentry.PlatformAbstractions.dll": {}
+        }
+      },
+      "Sentry.Protocol/1.0.6": {
+        "runtime": {
+          "lib/netstandard2.0/Sentry.Protocol.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Sentry.Protocol.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/4.0.1": {
@@ -3698,6 +3772,41 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Sentry/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zVMPH0o1kvKU5GEJiWkaIiZaGdnc5roJuhQ5QbWJ6v3ijqEtnzBeL49sgHuQWDkU3KluxZymf6AOQpSNvFrKJQ==",
+      "path": "sentry/1.2.0",
+      "hashPath": "sentry.1.2.0.nupkg.sha512"
+    },
+    "Sentry.AspNetCore/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aAm4psk+1UDDA+4VyfS57Zg8FaY/QGwZZp6QSWPzQgyudb+3LuDWKFlm+/ArSxjmGLEEL2s9jen9lZ+i+0153g==",
+      "path": "sentry.aspnetcore/1.2.0",
+      "hashPath": "sentry.aspnetcore.1.2.0.nupkg.sha512"
+    },
+    "Sentry.Extensions.Logging/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G7CUBqcW9mNHxq5p6BTmTPdc4xpf9Amha2Y44z+T61hBp28XHKF7596ZLRQ8gvoJr2YnRnF8bAWzods+zA9FJA==",
+      "path": "sentry.extensions.logging/1.2.0",
+      "hashPath": "sentry.extensions.logging.1.2.0.nupkg.sha512"
+    },
+    "Sentry.PlatformAbstractions/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NgcYNgZfIQNcMSFZTmgOria9/cqgKrV3ICNoC7iS/mmBZojLbdQMnnD7Tg5lfCKH1myk3AjU91VGDct88uw1Ow==",
+      "path": "sentry.platformabstractions/1.0.0",
+      "hashPath": "sentry.platformabstractions.1.0.0.nupkg.sha512"
+    },
+    "Sentry.Protocol/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IbaDxYb8ARVwlCgDYUVTxHmjdEPMX2GebJPtmf08ZOyrec632+6aWhYPAg5Yr3zoNkzDP1kV9rI4X9IDC07SBg==",
+      "path": "sentry.protocol/1.0.6",
+      "hashPath": "sentry.protocol.1.0.6.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/4.0.1": {
       "type": "package",

@@ -1,0 +1,19 @@
+{
+  "name": "thecaraxapiproxy",
+  "version": "0.0.1",
+  "description": "The Carax Api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Routeax/thecarax.git"
+  },
+  "author": "Agha Huseynov <agahuseynov@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Routeax/thecarax/issues"
+  },
+  "homepage": "https://github.com/Routeax/thecarax#readme"
+}

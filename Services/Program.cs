@@ -18,7 +18,9 @@ namespace Services
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+                WebHost.CreateDefaultBuilder(args).
+                 UseSentry("https://3977e81a61864331bee70debd2a94f3d@sentry.io/1477244")
                 .UseStartup<Startup>();
+
     }
 }

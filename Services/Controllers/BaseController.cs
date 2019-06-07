@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using Business;
 using Microsoft.AspNetCore.Cors;
@@ -81,7 +82,7 @@ namespace Services.Controllers
 
             if (tokenString == null)
             {
-                throw new Exception("Token can NOT be NULL");
+                throw new AuthenticationException("Token can NOT be NULL");
             }
 
             var identityToken = Guid.Parse(tokenString);

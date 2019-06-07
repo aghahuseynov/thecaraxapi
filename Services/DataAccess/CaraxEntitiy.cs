@@ -33,7 +33,7 @@ namespace DataAccess
         
         public DbSet<Reservation> Reservations { get; set; }
         
-        public ServicesInReservation ServicesInReservations { get; set; }
+        public DbSet<ServicesInReservation> ServicesInReservations { get; set; }
         
        
 
