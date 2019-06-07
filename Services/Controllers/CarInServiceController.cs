@@ -10,7 +10,7 @@ namespace Services.Controllers
 {
     public class CarInServiceController : BaseController
     {
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Create([FromBody] Models.Cars.CarInService carInService)
         {
             var isSuccess = await CarInServiceLogic.Create(GetToken(), GetDepartmentCode(), carInService);
