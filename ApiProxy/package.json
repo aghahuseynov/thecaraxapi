@@ -1,5 +1,5 @@
 {
-  "name": "thecaraxapiproxy",
+  "name": "@routeax/thecaraxapiproxy",
   "version": "0.0.1",
   "description": "The Carax Api",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Routeax/thecarax/issues"
   },
-  "homepage": "https://github.com/Routeax/thecarax#readme"
+  "homepage": "https://github.com/Routeax/thecarax#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }
