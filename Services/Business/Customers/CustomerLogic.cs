@@ -14,8 +14,8 @@ namespace Services.Business.Customers
             using (var db = new DataAccess.CaraxEntitiy())
             {
                 return await db.Customers
-                    .Where(q => q.IsActive == isActive && q.DepartmentCode == departmentCode && !q.IsDeleted)
-                    .ToListAsync();
+                    ?.Where(q => q.IsActive == isActive && q.DepartmentCode == departmentCode && !q.IsDeleted)
+                    ?.ToListAsync();
             }
         }
 

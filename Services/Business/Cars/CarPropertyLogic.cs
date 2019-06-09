@@ -14,7 +14,7 @@ namespace Services.Business.Cars
             AuthenticationLogic.CheckTokenInfo(token);
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.CarProperties.Where(q => q.CarId == carId).ToListAsync();
+                return await db.CarProperties?.Where(q => q.CarId == carId)?.ToListAsync();
             }
         }
 

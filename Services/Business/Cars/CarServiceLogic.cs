@@ -14,7 +14,7 @@ namespace Services.Business.Cars
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.CarServices.Where(q => q.DepartmentCode == departmentCode).ToListAsync();
+                return await db.CarServices?.Where(q => q.DepartmentCode == departmentCode)?.ToListAsync();
             }
         }
         public static async Task<List<Models.Cars.CarService>> Get(Guid token, string departmentCode, int carId)
@@ -23,8 +23,8 @@ namespace Services.Business.Cars
             {
                 return await db.CarInServices.
                     Include(q => q.CarService).
-                    Where(q => q.CarId == carId && q.CarService.DepartmentCode == departmentCode).
-                    Select(a => a.CarService).
+                    Where(q => q.CarId == carId && q.CarService.DepartmentCode == departmentCode)?.
+                    Select(a => a.CarService)?.
                     ToListAsync();
             }
         }

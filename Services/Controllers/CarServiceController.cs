@@ -4,21 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models.Roles;
 using Services.Business.Cars;
 
 namespace Services.Controllers
 {
 
+    [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
     public class CarServiceController : BaseController
     {
         [HttpGet("GetList")]
         public async Task<IActionResult> Get()
         {
             var list = await CarServiceLogic.Get(GetToken(), GetDepartmentCode());
-            if (!list.Any())
-            {
-                return NotFound();
-            }
             return Ok(list);
         }
 
@@ -26,10 +24,6 @@ namespace Services.Controllers
         public async Task<IActionResult> Get(int carId)
         {
             var list = await CarServiceLogic.Get(GetToken(), GetDepartmentCode(), carId);
-            if (!list.Any())
-            {
-                return NotFound();
-            }
             return Ok(list);
         }
 
