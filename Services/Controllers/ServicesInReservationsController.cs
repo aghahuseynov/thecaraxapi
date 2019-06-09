@@ -7,10 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using Models.Reservations;
+using Models.Roles;
 using Services.Business.Reservations;
 
 namespace Services.Controllers
 {
+
+    [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
     public class ServicesInReservationsController : BaseController
     {
         [HttpPost]
