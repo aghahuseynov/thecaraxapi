@@ -14,7 +14,16 @@ namespace Services
     {
         #region Methods
 
-
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                return true;
+            }
+            // ReSharper disable once GenericEnumeratorNotDisposed
+            var enumerator = enumerable.GetEnumerator();
+            return !enumerator.MoveNext();
+        }
         public static bool IsNullable(this Type type)
         {
             return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);

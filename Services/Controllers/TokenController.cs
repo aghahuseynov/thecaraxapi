@@ -17,7 +17,7 @@ namespace Services.Controllers
         [AllowAnonymous]
         public IActionResult Get(string departmentCode, string username, string password)
         {
-            if (!QueryParameters.IsValid(departmentCode, 10) || !QueryParameters.IsValid(username, 50) || string.IsNullOrEmpty(password))
+            if (!QueryParameters.IsValid(departmentCode, 20) || !QueryParameters.IsValid(username, 50) || string.IsNullOrEmpty(password))
             {
                 return BadRequest();
             }

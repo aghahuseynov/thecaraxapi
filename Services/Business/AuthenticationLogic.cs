@@ -16,13 +16,13 @@ namespace Business
 {
     public class AuthenticationLogic
     {
-        public static readonly ConcurrentDictionary<Guid, TokenInfo> Tokens = new ConcurrentDictionary<Guid, TokenInfo>();
+        public static readonly ConcurrentDictionary<Guid, UserTokenInfo> Tokens = new ConcurrentDictionary<Guid, UserTokenInfo>();
 
-        public static TokenInfo CheckTokenInfo(Guid tokenGuid)
+        public static UserTokenInfo CheckTokenInfo(Guid tokenGuid)
         {
             return CheckTokenInfo(tokenGuid.ToString());
         }
-        public static TokenInfo CheckTokenInfo(string tokenGuid)
+        public static UserTokenInfo CheckTokenInfo(string tokenGuid)
         {
             var token = Guid.Parse(string.Concat(tokenGuid.ToCharArray().Where(x => x != 8203)));
 
@@ -34,6 +34,8 @@ namespace Business
 
                 Tokens.AddOrUpdate(token, userInfo);
             }
+
+            userInfo.TokenEndDateTime = UserTokenInfoLogic.Get(token).TokenEndDateTime;
 
             try
             {
@@ -129,7 +131,19 @@ namespace Business
 
                         // add to db
                         UserTokenInfoLogic.Create(tokenInfo);
-
+                        Models.Tokens.Token tk = new Token
+                        {
+                            CompanyCode =  tokenInfo.CompanyCode,
+                            CreateDateTime = tokenInfo.CreatedDateTime,
+                            DepartmentCode =  tokenInfo.DepartmentCode,
+                            TokenEndDateTime = tokenInfo.TokenEndDateTime,
+                            TokenGuid = tokenInfo.TokenGuid,
+                            UserId =  tokenInfo.UserId,
+                            Username = tokenInfo.Username
+                        };
+                        db.Tokens.Add(tk);
+                        db.SaveChanges();
+                        
                         // add yo dictionary
                         Tokens.AddOrUpdate(tokenGuid, tokenInfo);
 

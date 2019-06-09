@@ -7,11 +7,11 @@ using Models.Tokens;
 
 namespace Models.Users
 {
-    public class UserTokenInfo : TokenInfo
+    public class UserTokenInfo
     {
         [ForeignKey("User")]
         public int UserId { get; set; }
-        public  User User { get; set; }
+        public User User { get; set; }
 
         [Column(TypeName = "nvarchar(50)")]
         public string Username { get; set; }
@@ -46,7 +46,7 @@ namespace Models.Users
         {
         }
 
-        public UserTokenInfo(Guid tokenGuid, int userId, string username, string departmentCode, int level, string email,  DateTime createdDateTime, DateTime endDateTime,string companyCode)
+        public UserTokenInfo(Guid tokenGuid, int userId, string username, string departmentCode, int level, string email, DateTime createdDateTime, DateTime endDateTime, string companyCode)
         {
             TokenGuid = tokenGuid;
             UserId = userId;

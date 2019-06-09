@@ -15,3 +15,4 @@ C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Debug\netcoreapp2.2\M
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Debug\netcoreapp2.2\Models.dll
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Debug\netcoreapp2.2\Models.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Debug\netcoreapp2.2\Models.csprojAssemblyReference.cache

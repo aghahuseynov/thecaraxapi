@@ -15,21 +15,19 @@ namespace Services.Business.Cars
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.Cars.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance)
-                    .ToListAsync();
+                return await db.Cars?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance)
+                    ?.ToListAsync();
             }
         }
 
         public static async Task<bool> Add(Guid token, string departmentCode, Models.Cars.Car car)
         {
             var userInfo = AuthenticationLogic.CheckTokenInfo(token);
-            if (!string.Equals(userInfo.DepartmentCode, departmentCode, StringComparison.CurrentCultureIgnoreCase))
-            {
-                throw new AuthenticationException();
-            }
 
             car.CreatedDateTime = DateTime.Now;
             car.CreatedBy = userInfo.Username;
+            car.CompanyCode = departmentCode;
+            car.DepartmentCode = departmentCode;
 
             using (var db = new DataAccess.CaraxEntitiy())
             {
@@ -44,27 +42,12 @@ namespace Services.Business.Cars
 
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                var findedCar = db.Cars.FirstOrDefault(q => q.Id == car.Id);
+                car.UpdatedDateTime = DateTime.Now;
+                car.UpdatedBy = userInfo.Username;
+                car.CompanyCode = userInfo.CompanyCode;
+                car.DepartmentCode = userInfo.DepartmentCode;
 
-                findedCar.UpdatedDateTime = DateTime.Now;
-                findedCar.UpdatedBy = userInfo.Username;
-                findedCar.BrandId = car.BrandId;
-                findedCar.BrandModelId = car.BrandModelId;
-                findedCar.CaseType = car.CaseType;
-                findedCar.Classes = car.Classes;
-                findedCar.Deposit = car.Deposit;
-                findedCar.Price = car.Price;
-                findedCar.NumberOfDoors = car.NumberOfDoors;
-                findedCar.Plate = car.Plate;
-                findedCar.Name = car.Name;
-                findedCar.MinDriverLicense = car.MinDriverLicense;
-                findedCar.Km = car.Km;
-                findedCar.GearType = car.GearType;
-                findedCar.FuelType = car.FuelType;
-                findedCar.EngineCapacity = car.EngineCapacity;
-                findedCar.Color = car.Color;
-
-                db.Cars.Update(findedCar);
+                db.Cars.Update(car);
                 return await db.SaveChangesAsync() > 0;
             }
         }
@@ -107,7 +90,7 @@ namespace Services.Business.Cars
             }
         }
 
-        public static async Task<bool> BeCrash(Guid token, int carId, bool crash)
+        public static async Task<bool> BeCrash(Guid token, int carId, bool crash=false)
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
