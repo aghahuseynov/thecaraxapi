@@ -4,3 +4,14 @@ C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.RazorAssemblyInfo.cs
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfoInputs.cache
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfo.cs
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Services.deps.json
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Services.runtimeconfig.json
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Services.runtimeconfig.dev.json
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Services.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Services.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Models.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\bin\Release\netcoreapp2.2\Models.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.RazorTargetAssemblyInfo.cache
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.csproj.CopyComplete
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.dll
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Release\netcoreapp2.2\Services.pdb
