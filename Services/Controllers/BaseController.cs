@@ -51,6 +51,8 @@ namespace Services.Controllers
                     .Values[DepartmentCode] as string;
             }
 
+            requestMallCode = requestMallCode.Replace("\\", string.Empty).Replace("\"", string.Empty);
+            requestMallCode = requestMallCode.Replace("\"", string.Empty);
 
             var identityMallCode = ControllerContext
                 ?.HttpContext
@@ -59,7 +61,7 @@ namespace Services.Controllers
                 ?.FirstOrDefault(c => string.Equals(c.Type, DepartmentCode, StringComparison.CurrentCultureIgnoreCase))
                 ?.Value;
 
-            if (!string.IsNullOrEmpty(identityMallCode) && !string.Equals(requestMallCode, identityMallCode, StringComparison.CurrentCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(identityMallCode) && !string.Equals(requestMallCode.Trim(), identityMallCode, StringComparison.CurrentCultureIgnoreCase))
             {
                 throw new Exception("Requested DepartmentCode and Identity DepartmentCode does NOT match");
             }
@@ -118,6 +120,14 @@ namespace Services.Controllers
         }
 
         public static QueryParameters QueryParameters { get; set; }
+
+
+        public  string FixTheMallCode(string departmentCode)
+        {
+            departmentCode = new string(departmentCode?.Where(c => !char.IsWhiteSpace(c)).ToArray());
+            departmentCode = departmentCode.Substring(0, departmentCode.Length > 10 ? 10 : departmentCode.Length);
+            return departmentCode;
+        }
     }
 
     public class QueryParameters
