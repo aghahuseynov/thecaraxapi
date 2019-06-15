@@ -31,7 +31,7 @@ namespace Services.Controllers
 
 
         [HttpPost("Create")]
-        [AllowAnonymous]
+        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
         public async Task<IActionResult> Create([FromBody] Models.Customers.Customer customer)
         {
             var isSuccess = await CustomerLogic.Add(GetToken(), customer);

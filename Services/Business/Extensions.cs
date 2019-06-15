@@ -110,14 +110,6 @@ namespace Business
         }
 
 
-
-        public static string FixTheMallCode(this string mallCode)
-        {
-            mallCode = new string(mallCode?.Where(c => !char.IsWhiteSpace(c)).ToArray());
-            mallCode = mallCode.Substring(0, mallCode.Length > 10 ? 10 : mallCode.Length);
-            return mallCode;
-        }
-
         public static bool IsNumeric(this string text)
         {
             return long.TryParse(text, out _);

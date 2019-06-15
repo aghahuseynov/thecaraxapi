@@ -121,13 +121,6 @@ namespace Services.Controllers
 
         public static QueryParameters QueryParameters { get; set; }
 
-
-        public  string FixTheMallCode(string departmentCode)
-        {
-            departmentCode = new string(departmentCode?.Where(c => !char.IsWhiteSpace(c)).ToArray());
-            departmentCode = departmentCode.Substring(0, departmentCode.Length > 10 ? 10 : departmentCode.Length);
-            return departmentCode;
-        }
     }
 
     public class QueryParameters

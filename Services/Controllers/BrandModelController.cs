@@ -13,7 +13,7 @@ namespace Services.Controllers
     [Route("/api/[controller]")]
     [ApiController]
     [EnableCors("AllowAll")]
-    public class BrandModelController : BaseController
+    public class BrandModelController : Controller
     {
 
         [HttpGet("GetBrands")]

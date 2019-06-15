@@ -52,12 +52,7 @@ namespace Services.Business.Customers
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                var finded = await db.Customers.FindAsync(customer);
-                if (finded == null)
-                {
-                    return true;
-                }
-                return false;
+               return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone || q.EMail == customer.EMail);
             }
         }
 
