@@ -71,9 +71,24 @@ namespace Services.Business.Customers
             var userInfo = AuthenticationLogic.CheckTokenInfo(token);
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                customer.UpdatedDateTime = DateTime.Now;
-                customer.UpdatedBy = userInfo.Username;
-                db.Customers.Update(customer);
+                var cs = db.Customers.First(q => q.Id == customer.Id);
+                cs.Tc = customer.Tc;
+                cs.Address = customer.Address;
+                cs.BirthOfDateTime = customer.BirthOfDateTime;
+                cs.EMail = customer.EMail;
+                cs.FirstPhone = customer.FirstPhone;
+                cs.Gender = customer.Gender;
+                cs.Name = customer.Name;
+                cs.Nationality = customer.Nationality;
+                cs.PassportSerialNumber = customer.PassportSerialNumber;
+                cs.SecondPhone = customer.SecondPhone;
+                cs.SerialNumberOfDrivingLicense = customer.SerialNumberOfDrivingLicense;
+                cs.Surname = customer.Surname;
+                cs.YearOfDrivingLicense = cs.YearOfDrivingLicense;
+                cs.UpdatedDateTime = DateTime.Now;
+                cs.UpdatedBy = userInfo.Username;
+
+                db.Customers.Update(cs);
                 return await db.SaveChangesAsync() > 0;
             }
         }
