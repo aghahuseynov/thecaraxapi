@@ -82,5 +82,21 @@ namespace Services.Business
                 return db.SaveChanges() > 0;
             }
         }
+
+        public  static async Task<bool> Delete(Guid tokens)
+        {
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                var tokeninfo = db.UserTokenInfos.FirstOrDefault(q => q.TokenGuid == tokens);
+
+                db.UserTokenInfos.Remove(tokeninfo);
+                db.SaveChanges();
+
+                var token = db.Tokens.First(q => q.TokenGuid == tokens);
+                db.Tokens.Remove(token);
+
+                return await db.SaveChangesAsync() > 0;
+            }
+        }
     }
 }

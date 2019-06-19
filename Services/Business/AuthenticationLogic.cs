@@ -46,7 +46,8 @@ namespace Business
 
                 if (Tokens.TryRemove(token, out userInfo))
                 {
-                    //UserTokenInfoLogic.Delete(tokenGuid); // delete token
+                    UserTokenInfoLogic.Delete(token); // delete token
+
                     throw new TimeoutException("Authentication token expired.");
                 }
             }
