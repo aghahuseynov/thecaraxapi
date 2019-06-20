@@ -72,5 +72,11 @@ namespace Models.Cars
         public ICollection<Reservations.Reservation> Reservations { get; set; }
 
 
+        // Partial 
+
+        [NotMapped]
+        public string ModelName { get; set; }
+
+        [NotMapped] public string BrandName { get; set; }
     }
 }

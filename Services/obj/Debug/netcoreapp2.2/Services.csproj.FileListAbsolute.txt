@@ -31,3 +31,4 @@ C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Debug\netcoreapp2.2
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Debug\netcoreapp2.2\Services.csproj.CopyComplete
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Debug\netcoreapp2.2\Services.dll
 C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Debug\netcoreapp2.2\Services.pdb
+C:\Users\agha\source\repos\RouteaxRepo\thecarax\Services\obj\Debug\netcoreapp2.2\Services.csprojAssemblyReference.cache

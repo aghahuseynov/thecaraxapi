@@ -15,7 +15,40 @@ namespace Services.Business.Cars
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.Cars?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance)
+                return await db.Cars.Include(a => a.Brand)
+                             .Include(a => a.BrandModel)
+                             ?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance).
+                            Select(a => new Models.Cars.Car
+                            {
+                                DepartmentCode = a.DepartmentCode,
+                                Id = a.Id,
+                                Name = a.Name,
+                                BrandId = a.BrandId,
+                                BrandModelId = a.BrandModelId,
+                                BrandName = a.Brand.Name,
+                                ModelName = a.BrandModel.Name,
+                                CaseType = a.CaseType,
+                                Classes = a.Classes,
+                                Color =  a.Color,
+                                CompanyCode =  a.CompanyCode,
+                                Crash = a.Crash,
+                                CreatedBy = a.CreatedBy,
+                                CreatedDateTime = a.CreatedDateTime,
+                                Deposit = a.Deposit,
+                                EngineCapacity = a.EngineCapacity,
+                                FuelType = a.FuelType,
+                                GearType = a.GearType,
+                                IsDeleted = a.IsDeleted,
+                                Km = a.Km,
+                                Maintenance = a.Maintenance,
+                                MinDriverLicense = a.MinDriverLicense,
+                                NumberOfDoors = a.NumberOfDoors,
+                                Plate = a.Plate,
+                                Price = a.Price,
+                                VisualId = a.VisualId,
+                                UpdatedBy = a.UpdatedBy,
+                                UpdatedDateTime = a.UpdatedDateTime,
+                            })
                     ?.ToListAsync();
             }
         }
@@ -90,7 +123,7 @@ namespace Services.Business.Cars
             }
         }
 
-        public static async Task<bool> BeCrash(Guid token, int carId, bool crash=false)
+        public static async Task<bool> BeCrash(Guid token, int carId, bool crash = false)
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {

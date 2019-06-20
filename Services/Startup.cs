@@ -71,10 +71,9 @@ namespace Services
                 g.SwaggerDoc("v2", new Info
                 {
                     Title = "TheCarax REST API",
-                    Version = "0.4",
+                    Version = "0.5",
                     Description = "Araç Kiralama Servisleri",
                     Contact = new Contact { Name = "Agha Huseynov", Email = "agahuseynov@hotmail.com", Url = "http://www.routeax.com" },
-
                 });
             });
         }
@@ -86,6 +85,7 @@ namespace Services
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

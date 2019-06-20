@@ -46,13 +46,16 @@ namespace Models
         }
         public enum Classes
         {
-
+            A = 0,
+            B = 0,
+            C = 0,
+            D = 0
         }
-        
+
         public enum ReservationTypes
         {
             Pre = 0,
-            Full =1 ,
+            Full = 1,
             Deliver = 2
         }
     }
