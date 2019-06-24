@@ -59,12 +59,12 @@ namespace Services.Business.Cars
 
             car.CreatedDateTime = DateTime.Now;
             car.CreatedBy = userInfo.Username;
-            car.CompanyCode = departmentCode;
+            car.CompanyCode = userInfo.CompanyCode;
             car.DepartmentCode = departmentCode;
 
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                await db.Cars.AddAsync(car);
+                db.Cars.Add(car);
                 return await db.SaveChangesAsync() > 0;
             }
         }
