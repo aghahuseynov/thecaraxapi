@@ -48,6 +48,7 @@ namespace Services.Business.Cars
                                 VisualId = a.VisualId,
                                 UpdatedBy = a.UpdatedBy,
                                 UpdatedDateTime = a.UpdatedDateTime,
+                                Year = a.Year
                             })
                     ?.ToListAsync();
             }

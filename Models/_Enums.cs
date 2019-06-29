@@ -47,9 +47,9 @@ namespace Models
         public enum Classes
         {
             A = 0,
-            B = 0,
-            C = 0,
-            D = 0
+            B = 1,
+            C = 2,
+            D = 3
         }
 
         public enum ReservationTypes

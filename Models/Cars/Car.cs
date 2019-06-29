@@ -52,6 +52,8 @@ namespace Models.Cars
 
         public int? Classes { get; set; }
 
+        public  string Year { get; set; }
+
 
         public DateTime CreatedDateTime { get; set; }
         public DateTime? UpdatedDateTime { get; set; }
@@ -78,5 +80,6 @@ namespace Models.Cars
         public string ModelName { get; set; }
 
         [NotMapped] public string BrandName { get; set; }
+
     }
 }
