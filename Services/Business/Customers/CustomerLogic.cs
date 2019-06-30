@@ -28,6 +28,15 @@ namespace Services.Business.Customers
             }
         }
 
+        public static async Task<Models.Customers.Customer> GetByCustomerTc(Guid token, string departmentCode, string tc)
+        {
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                return await db.Customers
+                    .FirstOrDefaultAsync(q => q.DepartmentCode == departmentCode && q.Tc == tc);
+            }
+        }
+
         public static async Task<bool> Add(Guid token, Models.Customers.Customer customer)
         {
             var userInfo = AuthenticationLogic.CheckTokenInfo(token);

@@ -29,6 +29,14 @@ namespace Services.Controllers
             return Ok(customer);
         }
 
+        [HttpGet("GetByCustomerTc")]
+        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
+        public async Task<IActionResult> GetByCustomerTc(string tc)
+        {
+            var customer = await CustomerLogic.GetByCustomerTc(GetToken(), GetDepartmentCode(), tc);
+            return Ok(customer);
+        }
+
 
         [HttpPost("Create")]
         [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
