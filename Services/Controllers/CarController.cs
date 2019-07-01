@@ -20,6 +20,14 @@ namespace Services.Controllers
             return Ok(list);
         }
 
+        [HttpGet("GetSingle")]
+        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
+        public  IActionResult GetSingle(int carId)
+        {
+            var list =  CarLogic.GetSingleCar(GetToken(), GetDepartmentCode(), carId);
+            return Ok(list);
+        }
+
         [HttpPost("Create")]
         [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
         public async Task<IActionResult> Create([FromBody]Models.Cars.Car car)
