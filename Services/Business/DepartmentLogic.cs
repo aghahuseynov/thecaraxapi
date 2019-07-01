@@ -49,6 +49,27 @@ namespace Business
             }
         }
 
+        public static IList<Models.Department> GetDepartments(Guid token)
+        {
+            var userInfo = AuthenticationLogic.CheckTokenInfo(token);
+
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                return db.Departments.Where(q => q.CompanyCode == userInfo.CompanyCode)?.Select(q => new Models.Department
+                {
+                    Code = q.Code,
+                    Address = q.Address,
+                    CompanyCode = q.CompanyCode,
+                    CreatedBy = q.CreatedBy,
+                    CreatedDateTime = q.CreatedDateTime,
+                    VisualId = q.VisualId,
+                    UpdatedBy = q.UpdatedBy,
+                    UpdatedDateTime = q.UpdatedDateTime,
+                    Name = q.Name,
+                })?.ToList();
+            }
+        }
+
 
     }
 }

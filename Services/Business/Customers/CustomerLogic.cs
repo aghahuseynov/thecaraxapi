@@ -44,6 +44,7 @@ namespace Services.Business.Customers
             customer.CreatedDateTime = DateTime.Now;
             customer.CreatedBy = userInfo.Username;
             customer.DepartmentCode = userInfo.DepartmentCode;
+            customer.CompanyCode = userInfo.CompanyCode;
 
             using (var db = new DataAccess.CaraxEntitiy())
             {
@@ -96,6 +97,9 @@ namespace Services.Business.Customers
                 cs.YearOfDrivingLicense = cs.YearOfDrivingLicense;
                 cs.UpdatedDateTime = DateTime.Now;
                 cs.UpdatedBy = userInfo.Username;
+                cs.CompanyCode = userInfo.CompanyCode;
+                cs.DepartmentCode = userInfo.DepartmentCode;
+
 
                 db.Customers.Update(cs);
                 return await db.SaveChangesAsync() > 0;
