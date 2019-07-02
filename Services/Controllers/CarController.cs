@@ -28,6 +28,19 @@ namespace Services.Controllers
             return Ok(list);
         }
 
+        [HttpGet("GetAvailable")]
+        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
+        public async Task<IActionResult> GetAvailable(DateTime beginDateTime , DateTime endDateTime)
+        {
+            if (!ModelState.IsValid)
+            {
+                BadRequest("Parametreler uyuşmuyor");
+            }
+
+            var list = await CarLogic.AvailableCar(GetDepartmentCode(), beginDateTime, endDateTime);
+            return Ok(list);
+        }
+
         [HttpPost("Create")]
         [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
         public async Task<IActionResult> Create([FromBody]Models.Cars.Car car)
