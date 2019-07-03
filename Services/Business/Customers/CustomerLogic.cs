@@ -62,7 +62,7 @@ namespace Services.Business.Customers
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-               return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone || q.EMail == customer.EMail);
+               return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
             }
         }
 

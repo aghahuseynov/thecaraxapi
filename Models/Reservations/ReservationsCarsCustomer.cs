@@ -13,5 +13,7 @@ namespace Models.Reservations
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
 
+
+
     }
 }
