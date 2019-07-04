@@ -43,7 +43,8 @@ namespace Models.Customers
         [Column(TypeName = "nvarchar(120)")]
         public string Address { get; set; }
 
-        public  int YearOfDrivingLicense { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? LicenseYear { get; set; }
 
         [Column(TypeName = "nvarchar(20)")]
         public string SerialNumberOfDrivingLicense { get; set; }

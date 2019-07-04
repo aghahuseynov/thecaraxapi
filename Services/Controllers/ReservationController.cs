@@ -42,15 +42,12 @@ namespace Services.Controllers
         }
 
         [HttpGet("GetList")]
-        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
+        [AuthenticationFilter.AllowAnonymous]
         public async Task<IActionResult> GetList(bool isApproval = false)
         {
-            var list = await ReservationLogic.GetList(GetToken(), GetDepartmentCode(), isApproval);
-            if (!list.Any())
-            {
-                return NotFound();
-            }
-            return Ok();
+
+            var list = await ReservationLogic.GetList( GetDepartmentCode(), isApproval);
+            return Ok(list);
         }
 
         [HttpPut("Update")]

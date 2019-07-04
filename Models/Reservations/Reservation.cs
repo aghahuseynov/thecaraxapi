@@ -13,24 +13,26 @@ namespace Models.Reservations
 
         [Column(TypeName = "nvarchar(120)")]
         public string DeliveryLocation { get; set; }
-        
+
         [Column(TypeName = "datetime")]
-        public  DateTime BeginDateTime { get; set; }
-        
+        public DateTime BeginDateTime { get; set; }
+
         [Column(TypeName = "datetime")]
-        public  DateTime EndDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
         public int ReservationStatus { get; set; } = (int)Enums.ReservationTypes.Pre;
-        
+
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public Customers.Customer Customer { get; set; }
-        
+
         public bool IsApproval { get; set; } = false;
-        
-        [ForeignKey("Car")] 
+
+        public decimal? Price { get; set; }
+
+        [ForeignKey("Car")]
         public int CarId { get; set; }
         public Car Car { get; set; }
-        
+
         public DateTime CreatedDateTime { get; set; }
         public DateTime? UpdatedDateTime { get; set; }
         public string CreatedBy { get; set; }
@@ -40,12 +42,12 @@ namespace Models.Reservations
         public string CompanyCode { get; set; }
         public Company Company { get; set; }
         public bool IsDeleted { get; set; } = false;
-        
-        
-        
-//        ====== Navigation Properties ==== 
 
-      
-      public ICollection<ServicesInReservation> ServicesInReservations { get; set; }
+
+
+        //        ====== Navigation Properties ==== 
+
+
+        public ICollection<ServicesInReservation> ServicesInReservations { get; set; }
     }
 }

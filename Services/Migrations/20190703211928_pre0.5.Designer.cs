@@ -4,14 +4,16 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Services.Migrations
 {
     [DbContext(typeof(CaraxEntitiy))]
-    partial class CaraxEntitiyModelSnapshot : ModelSnapshot
+    [Migration("20190703211928_pre0.5")]
+    partial class pre05
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -285,9 +287,6 @@ namespace Services.Migrations
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<DateTime?>("LicenseYear")
-                        .HasColumnType("datetime");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(50)");
 
@@ -312,6 +311,8 @@ namespace Services.Migrations
                     b.Property<string>("UpdatedBy");
 
                     b.Property<DateTime?>("UpdatedDateTime");
+
+                    b.Property<int>("YearOfDrivingLicense");
 
                     b.HasKey("Id");
 

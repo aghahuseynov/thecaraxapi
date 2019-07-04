@@ -94,7 +94,7 @@ namespace Services.Business.Customers
                 cs.SecondPhone = customer.SecondPhone;
                 cs.SerialNumberOfDrivingLicense = customer.SerialNumberOfDrivingLicense;
                 cs.Surname = customer.Surname;
-                cs.YearOfDrivingLicense = cs.YearOfDrivingLicense;
+                cs.LicenseYear = cs.LicenseYear;
                 cs.UpdatedDateTime = DateTime.Now;
                 cs.UpdatedBy = userInfo.Username;
                 cs.CompanyCode = userInfo.CompanyCode;
