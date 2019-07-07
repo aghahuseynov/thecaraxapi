@@ -62,7 +62,7 @@ namespace Services.Business.Customers
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-               return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
+                return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
             }
         }
 
@@ -94,11 +94,14 @@ namespace Services.Business.Customers
                 cs.SecondPhone = customer.SecondPhone;
                 cs.SerialNumberOfDrivingLicense = customer.SerialNumberOfDrivingLicense;
                 cs.Surname = customer.Surname;
-                cs.LicenseYear = cs.LicenseYear;
+                cs.LicenseYear = customer.LicenseYear;
                 cs.UpdatedDateTime = DateTime.Now;
                 cs.UpdatedBy = userInfo.Username;
                 cs.CompanyCode = userInfo.CompanyCode;
                 cs.DepartmentCode = userInfo.DepartmentCode;
+                cs.NameOfFather = customer.NameOfFather;
+                cs.NameOfMother = customer.NameOfMother;
+                cs.DrivingClasses = customer.DrivingClasses;
 
 
                 db.Customers.Update(cs);

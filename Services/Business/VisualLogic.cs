@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Authentication;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services.Business
 {
@@ -29,11 +30,11 @@ namespace Services.Business
             }
         }
 
-        public static Models.Visual GetVisual(string departmentCode, int visualId)
+        public static async Task<Models.Visual> GetVisual(string departmentCode, int visualId)
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return db.Visuals.FirstOrDefault(q => q.DepartmentCode == departmentCode && q.Id == visualId);
+                return await db.Visuals.FirstOrDefaultAsync(q => q.DepartmentCode == departmentCode && q.Id == visualId);
             }
         }
 

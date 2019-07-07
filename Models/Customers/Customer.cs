@@ -7,7 +7,7 @@ using Models.Interfaces;
 
 namespace Models.Customers
 {
-    public class Customer : IUserInfo, IDateTimeInfo, IDepartmentRelationship, ICompanyRelationship,ISoftDelete
+    public class Customer : IUserInfo, IDateTimeInfo, IDepartmentRelationship, ICompanyRelationship, ISoftDelete
     {
         [Key]
         public int Id { get; set; }
@@ -20,8 +20,8 @@ namespace Models.Customers
         public int? Gender { get; set; }
 
         [Column(TypeName = "datetime")]
-        public  DateTime? BirthOfDateTime { get; set; }
-        
+        public DateTime? BirthOfDateTime { get; set; }
+
         [Column(TypeName = "nvarchar(50)")]
         public string Nationality { get; set; }
 
@@ -61,10 +61,14 @@ namespace Models.Customers
         public string CompanyCode { get; set; }
         public Company Company { get; set; }
         public bool IsDeleted { get; set; } = false;
-        
-        
-        
-//        ========== Navigation Properties ========= 
-        public ICollection<Reservations.Reservation>  Reservations { get; set; }
+
+        public string NameOfMother { get; set; }
+        public string NameOfFather { get; set; }
+        public  string DrivingClasses { get; set; }
+
+
+
+        //        ========== Navigation Properties ========= 
+        public ICollection<Reservations.Reservation> Reservations { get; set; }
     }
 }

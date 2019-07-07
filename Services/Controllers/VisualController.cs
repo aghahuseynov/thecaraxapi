@@ -11,9 +11,9 @@ namespace Services.Controllers
     public class VisualController : BaseController
     {
         [HttpGet("GetImage/{visualId}")]
-        public IActionResult GetImage(int visualId, int? width = null, int? height = null)
+        public async Task<IActionResult> GetImage(int visualId, int? width = null, int? height = null)
         {
-            var visual = VisualLogic.GetVisual(GetDepartmentCode(), visualId);
+            var visual = await VisualLogic.GetVisual(GetDepartmentCode(), visualId);
             if (visual == null)
             {
                 return NotFound();
