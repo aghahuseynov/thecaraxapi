@@ -85,6 +85,9 @@ namespace Services.Business.Reservations
             {
                 reservation.CreatedDateTime = DateTime.Now;
                 reservation.CreatedBy = userInfo.Username;
+                reservation.DepartmentCode = userInfo.DepartmentCode;
+                reservation.CompanyCode = userInfo.CompanyCode;
+
                 await db.Reservations.AddAsync(reservation);
 
                 return await db.SaveChangesAsync() > 0;

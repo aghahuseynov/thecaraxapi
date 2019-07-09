@@ -10,7 +10,7 @@ namespace Services.Controllers
     public class ReservationController : BaseController
     {
         [HttpPost]
-        [AllowAnonymous]
+        [AuthenticationFilter.Authorize(Role.DepartmentOwner)]
         public async Task<IActionResult> Create([FromBody] Models.Reservations.Reservation reservations)
         {
             var isSuccess = await ReservationLogic.Create(GetToken(), reservations);

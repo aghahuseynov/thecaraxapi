@@ -102,6 +102,9 @@ namespace Services.Business.Customers
                 cs.NameOfFather = customer.NameOfFather;
                 cs.NameOfMother = customer.NameOfMother;
                 cs.DrivingClasses = customer.DrivingClasses;
+                cs.BloodGroup = customer.BloodGroup;
+                cs.Profession = customer.Profession;
+                cs.City = customer.City;
 
 
                 db.Customers.Update(cs);

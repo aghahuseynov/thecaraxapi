@@ -52,6 +52,10 @@ namespace Models.Customers
         public bool IsActive { get; set; } = true;
         public bool InBlackList { get; set; } = false;
 
+        public string Profession { get; set; }
+        public int BloodGroup { get; set; }
+        public  string City { get; set; }
+
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime CreatedDateTime { get; set; }
@@ -64,7 +68,7 @@ namespace Models.Customers
 
         public string NameOfMother { get; set; }
         public string NameOfFather { get; set; }
-        public  string DrivingClasses { get; set; }
+        public string DrivingClasses { get; set; }
 
 
 
