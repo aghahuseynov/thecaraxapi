@@ -39,7 +39,13 @@ namespace Services.Business.Reservations
                             CustomerName = a.Customer.Name,
                             CustomerSurname = a.Customer.Surname,
                             ReservationState = a.ReservationStatus,
-                            CreatedDateTime = a.CreatedDateTime
+                            CreatedDateTime = a.CreatedDateTime, 
+                            CreatedBy =  a.CreatedBy,
+                            ReservationDeposit =  a.Deposit,
+                            ReservationFuelCount = a.FuelCount,
+                            ReservationKmEnd =  a.KmEnd,
+                            ReservationKmStart =  a.KmStart,
+                            ReservationPaymentType =  a.PaymentType
                         }).
                         OrderByDescending(q => q.CreatedDateTime).
                         ToListAsync();

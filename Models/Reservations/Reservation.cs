@@ -33,6 +33,17 @@ namespace Models.Reservations
         public int CarId { get; set; }
         public Car Car { get; set; }
 
+        public int? PaymentType { get; set; }
+
+        [Column(TypeName = "nvarchar(5)")]
+        public string FuelCount { get; set; }
+        public int? KmStart { get; set; }
+        public int? KmEnd { get; set; }
+        public int Deposit { get; set; }
+
+
+
+
         public DateTime CreatedDateTime { get; set; }
         public DateTime? UpdatedDateTime { get; set; }
         public string CreatedBy { get; set; }
@@ -42,8 +53,6 @@ namespace Models.Reservations
         public string CompanyCode { get; set; }
         public Company Company { get; set; }
         public bool IsDeleted { get; set; } = false;
-
-
 
         //        ====== Navigation Properties ==== 
 
