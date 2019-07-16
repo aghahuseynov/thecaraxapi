@@ -108,6 +108,9 @@ namespace Services.Business.Reservations
             {
                 reservation.UpdatedDateTime = DateTime.Now;
                 reservation.UpdatedBy = userInfo.Username;
+                reservation.DepartmentCode = userInfo.DepartmentCode;
+                reservation.CompanyCode = userInfo.CompanyCode;
+
                 db.Reservations.Update(reservation);
                 return await db.SaveChangesAsync() > 0;
             }
