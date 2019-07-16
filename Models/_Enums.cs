@@ -56,7 +56,8 @@ namespace Models
         {
             Pre = 0,
             Full = 1,
-            Deliver = 2
+            Start = 2,
+            Finish = 3,
         }
     }
 }

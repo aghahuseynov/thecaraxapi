@@ -105,7 +105,7 @@ namespace Business
 
                 foreach (var info in dbTokens)
                 {
-                    info.TokenEndDateTime = dateTime.AddDays(1);
+                    info.TokenEndDateTime = dateTime.AddDays(7);
                     Tokens.AddOrUpdate(info.TokenGuid, info);
                     var departmentFirst = departments.FirstOrDefault(x => x.Code == info.DepartmentCode);
                     tokens.Add(new TokenResult { DepartmentCode = info.DepartmentCode, DepartmentName = departmentFirst?.Name, Token = info.TokenGuid });
@@ -128,7 +128,7 @@ namespace Business
 
                         // set token
                         var tokenGuid = Guid.NewGuid();
-                        var tokenInfo = new Models.Users.UserTokenInfo(tokenGuid, user.Id, user.Username, department.DepartmentCode, user.UserLevel, user.EMail, dateTime, dateTime.AddDays(1), user.CompanyCode);
+                        var tokenInfo = new Models.Users.UserTokenInfo(tokenGuid, user.Id, user.Username, department.DepartmentCode, user.UserLevel, user.EMail, dateTime, dateTime.AddDays(7), user.CompanyCode);
 
                         // add to db
                         UserTokenInfoLogic.Create(tokenInfo);
