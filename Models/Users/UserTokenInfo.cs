@@ -56,7 +56,7 @@ namespace Models.Users
             Email = email;
             CompanyCode = companyCode;
             CreatedDateTime = createdDateTime;
-            TokenEndDateTime = endDateTime.AddDays(1);
+            TokenEndDateTime = endDateTime.AddDays(7);
         }
     }
     public class TokenResult

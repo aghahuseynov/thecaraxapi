@@ -71,7 +71,7 @@ namespace Services
                 g.SwaggerDoc("v2", new Info
                 {
                     Title = "TheCarax REST API",
-                    Version = "1.6",
+                    Version = "1.7",
                     Description = "Araç Kiralama Servisleri",
                     Contact = new Contact { Name = "Agha Huseynov", Email = "agahuseynov@hotmail.com", Url = "http://www.routeax.com" },
                 });
