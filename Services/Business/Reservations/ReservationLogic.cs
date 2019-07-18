@@ -39,13 +39,13 @@ namespace Services.Business.Reservations
                             CustomerName = a.Customer.Name,
                             CustomerSurname = a.Customer.Surname,
                             ReservationState = a.ReservationStatus,
-                            CreatedDateTime = a.CreatedDateTime, 
-                            CreatedBy =  a.CreatedBy,
-                            ReservationDeposit =  a.Deposit,
+                            CreatedDateTime = a.CreatedDateTime,
+                            CreatedBy = a.CreatedBy,
+                            ReservationDeposit = a.Deposit,
                             ReservationFuelCount = a.FuelCount,
-                            ReservationKmEnd =  a.KmEnd,
-                            ReservationKmStart =  a.KmStart,
-                            ReservationPaymentType =  a.PaymentType
+                            ReservationKmEnd = a.KmEnd,
+                            ReservationKmStart = a.KmStart,
+                            ReservationPaymentType = a.PaymentType
                         }).
                         OrderByDescending(q => q.CreatedDateTime).
                         ToListAsync();
@@ -59,19 +59,84 @@ namespace Services.Business.Reservations
             }
         }
 
-        public static async Task<List<Models.Reservations.Reservation>> GetByCarId(Guid token, string departmentCode, int carId)
+        public static async Task<List<Models.Reservations.ReservationsCarsCustomer>> GetByCarId(Guid token, string departmentCode, int carId)
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.Reservations.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.CarId == carId).ToListAsync();
+                return await db.Reservations.
+                            Include(a => a.Car).
+                            Include(a => a.Car.Brand).
+                            Include(a => a.Car.BrandModel).
+                            Include(a => a.Customer).
+                            Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.CarId == carId)
+                            .Select(a => new ReservationsCarsCustomer
+                            {
+                                ReservationStartDateTime = a.BeginDateTime,
+                                ReservationEndDateTime = a.EndDateTime,
+                                ReservationPrice = a.Price,
+                                ReservationId = a.Id,
+                                CarBrandName = a.Car.Brand.Name,
+                                CarEngineCapacity = a.Car.EngineCapacity,
+                                CarId = a.CarId,
+                                CarModelName = a.Car.BrandModel.Name,
+                                CarPlate = a.Car.Plate,
+                                CarPrice = a.Car.Price,
+                                CustomerFirstPhone = a.Customer.FirstPhone,
+                                CustomerId = a.CustomerId,
+                                CustomerName = a.Customer.Name,
+                                CustomerSurname = a.Customer.Surname,
+                                ReservationState = a.ReservationStatus,
+                                CreatedDateTime = a.CreatedDateTime,
+                                CreatedBy = a.CreatedBy,
+                                ReservationDeposit = a.Deposit,
+                                ReservationFuelCount = a.FuelCount,
+                                ReservationKmEnd = a.KmEnd,
+                                ReservationKmStart = a.KmStart,
+                                ReservationPaymentType = a.PaymentType
+                            }).
+                            OrderByDescending(q => q.CreatedDateTime).
+                            ToListAsync();
             }
         }
 
-        public static async Task<List<Models.Reservations.Reservation>> GetByCustomerId(Guid token, string departmentCode, int customerId)
+        public static async Task<List<Models.Reservations.ReservationsCarsCustomer>> GetByCustomerId(Guid token, string departmentCode, int customerId)
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.Reservations.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.CustomerId == customerId).ToListAsync();
+                return
+                    await db.Reservations.
+                        Include(a => a.Car).
+                        Include(a => a.Car.Brand).
+                        Include(a => a.Car.BrandModel).
+                        Include(a => a.Customer).
+                        Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.CustomerId == customerId)
+                        .Select(a => new ReservationsCarsCustomer
+                        {
+                            ReservationStartDateTime = a.BeginDateTime,
+                            ReservationEndDateTime = a.EndDateTime,
+                            ReservationPrice = a.Price,
+                            ReservationId = a.Id,
+                            CarBrandName = a.Car.Brand.Name,
+                            CarEngineCapacity = a.Car.EngineCapacity,
+                            CarId = a.CarId,
+                            CarModelName = a.Car.BrandModel.Name,
+                            CarPlate = a.Car.Plate,
+                            CarPrice = a.Car.Price,
+                            CustomerFirstPhone = a.Customer.FirstPhone,
+                            CustomerId = a.CustomerId,
+                            CustomerName = a.Customer.Name,
+                            CustomerSurname = a.Customer.Surname,
+                            ReservationState = a.ReservationStatus,
+                            CreatedDateTime = a.CreatedDateTime,
+                            CreatedBy = a.CreatedBy,
+                            ReservationDeposit = a.Deposit,
+                            ReservationFuelCount = a.FuelCount,
+                            ReservationKmEnd = a.KmEnd,
+                            ReservationKmStart = a.KmStart,
+                            ReservationPaymentType = a.PaymentType
+                        }).
+  OrderByDescending(q => q.CreatedDateTime).
+  ToListAsync();
             }
         }
 
