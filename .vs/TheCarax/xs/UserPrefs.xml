@@ -1,20 +1,27 @@
 ﻿<Properties StartupConfiguration="{E7406B22-4B50-42CE-9AF6-AA18CE6475D7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Customers/Customer.cs">
     <Files>
-      <File FileName="Services/Controllers/ReservationController.cs" Line="24" Column="51" />
-      <File FileName="Services/Business/Reservations/ReservationLogic.cs" Line="107" Column="43" />
-      <File FileName="Services/Startup.cs" Line="73" Column="49" />
+      <File FileName="Services/Startup.cs" Line="22" Column="25" />
+      <File FileName="Services/Controllers/CustomerController.cs" Line="28" Column="50" />
+      <File FileName="Services/Business/Customers/CustomerLogic.cs" Line="22" Column="57" />
+      <File FileName="Models/Customers/Customer.cs" Line="10" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TheCarax" expanded="True">
+            <Node name="Models" expanded="True">
+              <Node name="Customers" expanded="True">
+                <Node name="Customer.cs" selected="True" />
+              </Node>
+              <Node name="Reservations" expanded="True" />
+            </Node>
             <Node name="Services" expanded="True">
               <Node name="Business" expanded="True">
+                <Node name="Customers" expanded="True" />
                 <Node name="Reservations" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

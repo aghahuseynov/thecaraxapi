@@ -82,6 +82,7 @@ namespace Services.Business.Customers
             using (var db = new DataAccess.CaraxEntitiy())
             {
                 var cs = db.Customers.First(q => q.Id == customer.Id);
+
                 cs.Tc = customer.Tc;
                 cs.Address = customer.Address;
                 cs.BirthOfDateTime = customer.BirthOfDateTime;
@@ -105,7 +106,7 @@ namespace Services.Business.Customers
                 cs.BloodGroup = customer.BloodGroup;
                 cs.Profession = customer.Profession;
                 cs.City = customer.City;
-
+                cs.IsAdditionalDriver = customer.IsAdditionalDriver;
 
                 db.Customers.Update(cs);
                 return await db.SaveChangesAsync() > 0;

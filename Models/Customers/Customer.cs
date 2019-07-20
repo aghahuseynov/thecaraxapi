@@ -50,6 +50,8 @@ namespace Models.Customers
         public string SerialNumberOfDrivingLicense { get; set; }
 
         public bool IsActive { get; set; } = true;
+        public bool IsAdditionalDriver { get; set; } = false;
+
         public bool InBlackList { get; set; } = false;
 
         public string Profession { get; set; }
