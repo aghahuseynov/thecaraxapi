@@ -55,7 +55,7 @@ namespace Models.Customers
         public bool InBlackList { get; set; } = false;
 
         public string Profession { get; set; }
-        public int BloodGroup { get; set; }
+        public int? BloodGroup { get; set; }
         public  string City { get; set; }
 
         public string CreatedBy { get; set; }
