@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Models\\Models.csproj": {}
+    "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Models\\Models.csproj": {
+    "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\agha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Models\\obj\\",
+        "projectPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\Agha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\agha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Agha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

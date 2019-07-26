@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Services\\Services.csproj": {}
+    "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Services\\Services.csproj": {
+    "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\agha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\agha\\source\\repos\\RouteaxRepo\\thecarax\\Services\\obj\\",
+        "projectPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Agha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\agha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Agha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -18,19 +18,49 @@ namespace Models
         [Column(TypeName = "nvarchar(20)")]
         public string Code { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "nvarchar(MAX)")]
         public string Name { get; set; }
 
-        [Column(TypeName = "nvarchar(150)")]
+        [Column(TypeName = "nvarchar(50)")]
+        public string DisplayName { get; set; }
+
+        [Column(TypeName = "nvarchar(MAX)")]
         public string Address { get; set; }
 
         public int? VisualId { get; set; }
+
+        [Column(TypeName = "nvarchar(100)")]
+        public string EMail { get; set; }
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string TaxNumber { get; set; }
+
+        [Column(TypeName = "nvarchar(50)")]
+        public string TaxAdministration { get; set; }
+
+        [Column(TypeName = "nvarchar(30)")]
+        public string Phone { get; set; }
+
+        [Column(TypeName = "nvarchar(30)")]
+        public string FaxNo { get; set; }
+
+        [Column(TypeName = "nvarchar(75)")]
+        public string InstagramUrl { get; set; }
+
+        [Column(TypeName = "nvarchar(75)")]
+        public string FacebookUrl { get; set; }
+
+        [Column(TypeName = "nvarchar(75)")]
+        public string OfficalEMail { get; set; }
+
+        [Column(TypeName = "nvarchar(75)")]
+        public string PublicSiteUrl { get; set; }
+
 
         [ForeignKey("Company")]
         [Column(TypeName = "nvarchar(20)")]
         public string CompanyCode { get; set; }
         public  Company Company { get; set; }
-
 
         [Column(TypeName = "nvarchar(50)")]
         public string CreatedBy { get; set; }
@@ -55,10 +85,6 @@ namespace Models
         public ICollection<CarService> CarServices { get; set; }
         public ICollection<Reservations.Reservation> Reservations { get; set; }
         public ICollection<ServicesInReservation> ServicesInReservations { get; set; }
-
-
-
-
 
     }
 }
