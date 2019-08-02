@@ -7,7 +7,7 @@ namespace Services.Controllers.Public
 {
     public class PublicCustomerController : BaseController
     {
-        [HttpPut("Create")]
+        [HttpPost("Create")]
         [AuthenticationFilter.AllowAnonymous]
         public async Task<IActionResult> Create([FromBody] Models.Customers.Customer customer)
         {
