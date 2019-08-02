@@ -45,7 +45,6 @@ namespace Services.Controllers
         [AuthenticationFilter.AllowAnonymous]
         public async Task<IActionResult> GetList(bool isApproval = false)
         {
-
             var list = await ReservationLogic.GetList( GetDepartmentCode(), isApproval);
             return Ok(list);
         }

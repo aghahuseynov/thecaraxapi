@@ -48,3 +48,4 @@ C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Debug\netcoreapp2.2\S
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Debug\netcoreapp2.2\Services.csproj.CopyComplete
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Debug\netcoreapp2.2\Services.dll
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Debug\netcoreapp2.2\Services.pdb
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Debug\netcoreapp2.2\Services.csprojAssemblyReference.cache

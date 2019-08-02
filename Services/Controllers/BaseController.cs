@@ -19,6 +19,8 @@ namespace Services.Controllers
         public const string DepartmentCode = "departmentcode";
         public static string Username = "username";
         public const string Token = "token";
+        public const string AccessToken = "accesstoken";
+
         protected BaseController()
         {
             if (QueryParameters == null)
@@ -67,6 +69,12 @@ namespace Services.Controllers
             }
 
             return requestMallCode;
+        }
+
+        [NonAction]
+        public string GetAccessToken()
+        {
+            return Request.Headers[AccessToken].ToString();
         }
 
 

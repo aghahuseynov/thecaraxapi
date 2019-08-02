@@ -185,5 +185,25 @@ namespace Services.Business.Reservations
             }
         }
 
+
+
+
+        // Public Reservation Logic 
+
+        public static async Task<bool> PublicCreate(Models.Reservations.Reservation reservation, string departmentCode)
+        {
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                reservation.CreatedDateTime = DateTime.Now;
+                reservation.CreatedBy = departmentCode;
+                reservation.DepartmentCode = departmentCode;
+                reservation.CompanyCode = reservation.CompanyCode;
+
+                await db.Reservations.AddAsync(reservation);
+
+                return await db.SaveChangesAsync() > 0;
+            }
+        }
+
     }
 }

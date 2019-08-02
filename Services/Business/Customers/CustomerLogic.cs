@@ -113,5 +113,27 @@ namespace Services.Business.Customers
             }
         }
 
+
+
+        // Public Customer Logic 
+
+        public static async Task<bool> Add(Models.Customers.Customer customer, string departmentCode)
+        {
+            customer.CreatedDateTime = DateTime.Now;
+            customer.CreatedBy = departmentCode;
+            customer.DepartmentCode = departmentCode;
+            customer.CompanyCode = customer.CompanyCode;
+
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                if (!await CheckCurrentCustomers(customer))
+                {
+                    await db.Customers.AddAsync(customer);
+                    return await db.SaveChangesAsync() > 0;
+                }
+
+                return false;
+            }
+        }
     }
 }
