@@ -73,6 +73,8 @@ namespace Models
         [Column(TypeName = "datetime")]
         public DateTime? UpdatedDateTime { get; set; }
 
+        public Guid? AccessToken { get; set; }
+
 
         //=========== Navigation Properties ============ 
         public  ICollection<User> Users { get; set; }

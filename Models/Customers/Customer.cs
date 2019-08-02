@@ -53,6 +53,7 @@ namespace Models.Customers
         public bool IsAdditionalDriver { get; set; } = false;
 
         public bool InBlackList { get; set; } = false;
+        public int? LocationSite { get; set; }
 
         public string Profession { get; set; }
         public int? BloodGroup { get; set; }

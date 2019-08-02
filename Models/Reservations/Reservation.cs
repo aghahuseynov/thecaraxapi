@@ -35,14 +35,13 @@ namespace Models.Reservations
 
         public int? PaymentType { get; set; }
 
+        public int? LocationSite { get; set; }
+
         [Column(TypeName = "nvarchar(5)")]
         public string FuelCount { get; set; }
         public int? KmStart { get; set; }
         public int? KmEnd { get; set; }
         public int Deposit { get; set; }
-
-
-
 
         public DateTime CreatedDateTime { get; set; }
         public DateTime? UpdatedDateTime { get; set; }

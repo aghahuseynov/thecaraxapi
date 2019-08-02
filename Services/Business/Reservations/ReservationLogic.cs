@@ -45,7 +45,8 @@ namespace Services.Business.Reservations
                             ReservationFuelCount = a.FuelCount,
                             ReservationKmEnd = a.KmEnd,
                             ReservationKmStart = a.KmStart,
-                            ReservationPaymentType = a.PaymentType
+                            ReservationPaymentType = a.PaymentType,
+                            LocationSite = a.LocationSite
                         }).
                         OrderByDescending(q => q.CreatedDateTime).
                         ToListAsync();
@@ -92,7 +93,8 @@ namespace Services.Business.Reservations
                                 ReservationFuelCount = a.FuelCount,
                                 ReservationKmEnd = a.KmEnd,
                                 ReservationKmStart = a.KmStart,
-                                ReservationPaymentType = a.PaymentType
+                                ReservationPaymentType = a.PaymentType,
+                                LocationSite = a.LocationSite
                             }).
                             OrderByDescending(q => q.CreatedDateTime).
                             ToListAsync();
@@ -133,12 +135,14 @@ namespace Services.Business.Reservations
                             ReservationFuelCount = a.FuelCount,
                             ReservationKmEnd = a.KmEnd,
                             ReservationKmStart = a.KmStart,
-                            ReservationPaymentType = a.PaymentType
+                            ReservationPaymentType = a.PaymentType,
+                            LocationSite = a.LocationSite
                         }).
-  OrderByDescending(q => q.CreatedDateTime).
-  ToListAsync();
+                        OrderByDescending(q => q.CreatedDateTime).
+                         ToListAsync();
             }
         }
+
 
         public static async Task<List<Models.Reservations.Reservation>> GetByStatus(Guid token, string departmentCode, int statusId)
         {

@@ -23,6 +23,7 @@ namespace Models.Reservations
         public decimal CarPrice { get; set; }
 
 
+        public int? LocationSite { get; set; }
 
         public DateTime ReservationStartDateTime { get; set; }
         public DateTime ReservationEndDateTime { get; set; }
