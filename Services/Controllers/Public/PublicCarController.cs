@@ -20,7 +20,7 @@ namespace Services.Controllers.Public
                 return Unauthorized();
             }
 
-            if (!ModelState.IsValid || beginDateTime.Date < DateTime.Now)
+            if (!ModelState.IsValid)
             {
                return BadRequest("Parametreler uyuşmuyor");
             }
