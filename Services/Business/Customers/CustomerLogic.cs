@@ -117,23 +117,33 @@ namespace Services.Business.Customers
 
         // Public Customer Logic 
 
-        public static async Task<bool> Add(Models.Customers.Customer customer, string departmentCode)
+        public static async Task<Models.Customers.Customer> Add(Models.Customers.Customer customer, string departmentCode)
         {
             customer.CreatedDateTime = DateTime.Now;
             customer.CreatedBy = departmentCode;
             customer.DepartmentCode = departmentCode;
             customer.CompanyCode = customer.CompanyCode;
 
-            using (var db = new DataAccess.CaraxEntitiy())
+            try
             {
-                if (!await CheckCurrentCustomers(customer))
+                using (var db = new DataAccess.CaraxEntitiy())
                 {
-                    await db.Customers.AddAsync(customer);
-                    return await db.SaveChangesAsync() > 0;
-                }
+                    if (!await CheckCurrentCustomers(customer))
+                    {
+                        await db.Customers.AddAsync(customer);
+                        await db.SaveChangesAsync();
+                        return customer;
+                    }
 
-                return false;
+                    var finded = db.Customers.First(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
+                    return finded;
+                }
             }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
     }
 }
