@@ -13,7 +13,7 @@ namespace Services.Controllers.Public
 {
     public class PublicReservationController : BaseController
     {
-        [HttpGet("Create")]
+        [HttpPost("Create")]
         [AuthenticationFilter.AllowAnonymous]
         public async Task<IActionResult> Create([FromBody] Models.Reservations.Reservation reservations)
         {

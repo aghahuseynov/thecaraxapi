@@ -1,24 +1,30 @@
 ﻿<Properties StartupConfiguration="{E7406B22-4B50-42CE-9AF6-AA18CE6475D7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/Migrations/20190722220721_pre1.3.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/Controllers/Public/PublicReservationController.cs">
     <Files>
       <File FileName="Services/Startup.cs" Line="22" Column="25" />
-      <File FileName="Services/Controllers/CustomerController.cs" Line="28" Column="49" />
-      <File FileName="Services/Business/Customers/CustomerLogic.cs" Line="88" Column="63" />
-      <File FileName="Models/Customers/Customer.cs" Line="72" Column="40" />
-      <File FileName="Services/Business/Reservations/ReservationLogic.cs" Line="143" Column="63" />
-      <File FileName="Models/Reservations/Reservation.cs" Line="45" Column="1" />
-      <File FileName="Services/Migrations/20190720205325_pre1.2.cs" Line="9" Column="1" />
-      <File FileName="Services/Migrations/20190720205325_pre1.2.Designer.cs" Line="294" Column="44" />
-      <File FileName="Services/Migrations/20190722220721_pre1.3.cs" Line="1" Column="1" />
+      <File FileName="Services/Controllers/CustomerController.cs" />
+      <File FileName="Services/Business/Customers/CustomerLogic.cs" />
+      <File FileName="Models/Customers/Customer.cs" />
+      <File FileName="Services/Business/Reservations/ReservationLogic.cs" />
+      <File FileName="Models/Reservations/Reservation.cs" Line="44" Column="27" />
+      <File FileName="Services/Migrations/20190720205325_pre1.2.cs" />
+      <File FileName="Services/Migrations/20190720205325_pre1.2.Designer.cs" />
+      <File FileName="Services/Migrations/20190722220721_pre1.3.cs" />
+      <File FileName="Services/Controllers/Public/PublicReservationController.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TheCarax" expanded="True">
-            <Node name="Solution Items" expanded="True" />
-            <Node name="Models" expanded="True" />
-            <Node name="Services" expanded="True" selected="True">
-              <Node name="Migrations" expanded="True" />
+            <Node name="Models" expanded="True">
+              <Node name="Reservations" expanded="True" />
+            </Node>
+            <Node name="Services" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="Public" expanded="True">
+                  <Node name="PublicReservationController.cs" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
