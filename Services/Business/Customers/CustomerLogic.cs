@@ -62,7 +62,7 @@ namespace Services.Business.Customers
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return db.Customers.Any(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
+                return await db.Customers.AnyAsync(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
             }
         }
 
@@ -105,7 +105,8 @@ namespace Services.Business.Customers
                 cs.DrivingClasses = customer.DrivingClasses;
                 cs.BloodGroup = customer.BloodGroup;
                 cs.Profession = customer.Profession;
-                //cs.City = customer.City;
+                cs.CityId = customer.CityId;
+                cs.CountryCode = customer.CountryCode;
                 cs.IsAdditionalDriver = customer.IsAdditionalDriver;
 
                 db.Customers.Update(cs);
@@ -124,19 +125,19 @@ namespace Services.Business.Customers
             customer.DepartmentCode = departmentCode;
             customer.CompanyCode = customer.CompanyCode;
 
-       
-                using (var db = new DataAccess.CaraxEntitiy())
-                {
-                    if (!await CheckCurrentCustomers(customer))
-                    {
-                        await db.Customers.AddAsync(customer);
-                        await db.SaveChangesAsync();
-                        return customer;
-                    }
 
-                    var finded = db.Customers.First(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
-                    return finded;
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                if (!await CheckCurrentCustomers(customer))
+                {
+                    await db.Customers.AddAsync(customer);
+                    await db.SaveChangesAsync();
+                    return customer;
                 }
+
+                var finded = db.Customers.First(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
+                return finded;
+            }
 
         }
     }
