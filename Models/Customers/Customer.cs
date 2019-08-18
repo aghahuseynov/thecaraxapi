@@ -57,7 +57,7 @@ namespace Models.Customers
 
         public string Profession { get; set; }
         public int? BloodGroup { get; set; }
-        public  string City { get; set; }
+        public string City { get; set; }
 
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
