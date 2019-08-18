@@ -19,7 +19,6 @@ C:/Users/agha/source/repos/RouteaxRepo/thecarax/Models/obj/Debug/netcoreapp2.2/M
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Debug\netcoreapp2.2\Models.deps.json
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Debug\netcoreapp2.2\Models.dll
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Debug\netcoreapp2.2\Models.pdb
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.csprojAssemblyReference.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfoInputs.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
