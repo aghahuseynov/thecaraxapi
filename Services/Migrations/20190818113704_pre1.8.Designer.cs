@@ -4,14 +4,16 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Services.Migrations
 {
     [DbContext(typeof(CaraxEntitiy))]
-    partial class CaraxEntitiyModelSnapshot : ModelSnapshot
+    [Migration("20190818113704_pre1.8")]
+    partial class pre18
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -315,11 +317,7 @@ namespace Services.Migrations
 
                     b.Property<int?>("BloodGroup");
 
-                    b.Property<int?>("CityId");
-
                     b.Property<string>("CompanyCode");
-
-                    b.Property<string>("CountryCode");
 
                     b.Property<string>("CreatedBy");
 
@@ -385,11 +383,7 @@ namespace Services.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityId");
-
                     b.HasIndex("CompanyCode");
-
-                    b.HasIndex("CountryCode");
 
                     b.HasIndex("DepartmentCode");
 
@@ -850,17 +844,9 @@ namespace Services.Migrations
 
             modelBuilder.Entity("Models.Customers.Customer", b =>
                 {
-                    b.HasOne("Models.Address.City", "City")
-                        .WithMany("Customers")
-                        .HasForeignKey("CityId");
-
                     b.HasOne("Models.Company", "Company")
                         .WithMany("Customers")
                         .HasForeignKey("CompanyCode");
-
-                    b.HasOne("Models.Address.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryCode");
 
                     b.HasOne("Models.Department", "Department")
                         .WithMany()

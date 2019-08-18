@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using Models.Address;
 using Models.Interfaces;
 
 namespace Models.Customers
@@ -57,7 +58,17 @@ namespace Models.Customers
 
         public string Profession { get; set; }
         public int? BloodGroup { get; set; }
-        public string City { get; set; }
+        public string OldCity { get; set; }
+
+        [ForeignKey("City")]
+        public int? CityId { get; set; }
+        public City City { get; set; }
+
+        [ForeignKey("Country")]
+        public string CountryCode { get; set; }
+        public Country Country { get; set; }
+
+
 
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }

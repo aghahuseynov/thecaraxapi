@@ -20,5 +20,6 @@ namespace Models.Address
 
         //==================== Navigation Property ============== 
         public ICollection<County> Counties { get; set; }
+        public ICollection<Customers.Customer> Customers { get; set; }
     }
 }

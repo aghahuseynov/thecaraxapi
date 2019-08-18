@@ -105,7 +105,7 @@ namespace Services.Business.Customers
                 cs.DrivingClasses = customer.DrivingClasses;
                 cs.BloodGroup = customer.BloodGroup;
                 cs.Profession = customer.Profession;
-                cs.City = customer.City;
+                //cs.City = customer.City;
                 cs.IsAdditionalDriver = customer.IsAdditionalDriver;
 
                 db.Customers.Update(cs);
