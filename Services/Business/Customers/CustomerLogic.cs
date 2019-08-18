@@ -124,8 +124,7 @@ namespace Services.Business.Customers
             customer.DepartmentCode = departmentCode;
             customer.CompanyCode = customer.CompanyCode;
 
-            try
-            {
+       
                 using (var db = new DataAccess.CaraxEntitiy())
                 {
                     if (!await CheckCurrentCustomers(customer))
@@ -138,11 +137,6 @@ namespace Services.Business.Customers
                     var finded = db.Customers.First(q => q.Tc == customer.Tc || q.FirstPhone == customer.FirstPhone);
                     return finded;
                 }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
 
         }
     }

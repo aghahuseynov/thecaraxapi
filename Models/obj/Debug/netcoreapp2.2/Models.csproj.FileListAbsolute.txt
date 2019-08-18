@@ -24,3 +24,4 @@ C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Mod
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.dll
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.pdb
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Debug\netcoreapp2.2\Models.csprojAssemblyReference.cache

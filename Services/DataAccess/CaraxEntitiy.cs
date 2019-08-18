@@ -34,8 +34,10 @@ namespace DataAccess
         public DbSet<Reservation> Reservations { get; set; }
         
         public DbSet<ServicesInReservation> ServicesInReservations { get; set; }
-        
-       
+
+        public DbSet<Models.Address.Country> Countries { get; set; }
+        public DbSet<Models.Address.City> Cities { get; set; }
+        public DbSet<Models.Address.County> Counties { get; set; }
 
     }
 }
