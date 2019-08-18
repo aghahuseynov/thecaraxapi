@@ -686,28 +686,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/agha/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Agha\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Models/Models.csproj",
+      "projectUniqueName": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "/Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Models/Models.csproj",
-      "packagesPath": "/Users/agha/.nuget/packages/",
-      "outputPath": "/Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Models/obj/",
+      "projectPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\Agha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Agha\\Desktop\\RouteaxRepo\\thecaraxapi\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/agha/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Agha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
