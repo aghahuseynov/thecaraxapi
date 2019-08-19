@@ -107,8 +107,8 @@ namespace Services.Business.Customers
                 cs.Profession = customer.Profession;
                 cs.CityId = customer.CityId;
                 cs.CountryCode = customer.CountryCode;
+                cs.CountyId = customer.CountyId;
                 cs.IsAdditionalDriver = customer.IsAdditionalDriver;
-
                 db.Customers.Update(cs);
                 return await db.SaveChangesAsync() > 0;
             }

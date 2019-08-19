@@ -32,6 +32,12 @@ C:/Users/agha/source/repos/RouteaxRepo/thecarax/Services/obj/Release/netcoreapp2
 /Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Services/obj/Release/netcoreapp2.2/Services.csproj.CopyComplete
 /Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Services/obj/Release/netcoreapp2.2/Services.dll
 /Users/agha/Desktop/repo/RouteaxRepo/thecaraxapi/Services/obj/Release/netcoreapp2.2/Services.pdb
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.csprojAssemblyReference.cache
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.csproj.CoreCompileInputs.cache
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.RazorAssemblyInfo.cache
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.RazorAssemblyInfo.cs
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfoInputs.cache
+C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfo.cs
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Services.deps.json
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Services.runtimeconfig.json
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Services.runtimeconfig.dev.json
@@ -39,12 +45,6 @@ C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Services.pdb
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Models.dll
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\bin\Release\netcoreapp2.2\Models.pdb
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.csprojAssemblyReference.cache
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.csproj.CoreCompileInputs.cache
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.RazorAssemblyInfo.cache
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.RazorAssemblyInfo.cs
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfoInputs.cache
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.AssemblyInfo.cs
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.RazorTargetAssemblyInfo.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.csproj.CopyComplete
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Services\obj\Release\netcoreapp2.2\Services.dll
