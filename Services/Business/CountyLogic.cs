@@ -8,11 +8,11 @@ namespace Services.Business
 {
     public static class CountyLogic
     {
-        public static async Task<IList<Models.Address.County>> Get(int cityId)
+        public static async Task<IList<Models.Address.County>> Get()
         {
             using (var db = new DataAccess.CaraxEntitiy())
             {
-                return await db.Counties.Where(q => q.CityId == cityId)?.ToListAsync();
+                return await db.Counties.ToListAsync();
             }
         }
     }

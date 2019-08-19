@@ -13,9 +13,9 @@ namespace Services.Controllers
 
         [HttpGet]
         [AuthenticationFilter.AllowAnonymous()]
-        public async Task<IActionResult> Get(string code)
+        public async Task<IActionResult> Get()
         {
-            var result = await CityLogic.GetByCode(code?.ToUpper());
+            var result = await CityLogic.Get();
             return Ok(result);
         }
 

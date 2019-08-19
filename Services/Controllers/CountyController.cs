@@ -14,9 +14,9 @@ namespace Services.Controllers
 
         [HttpGet]
         [AuthenticationFilter.AllowAnonymous()]
-        public async Task<IActionResult> Get(int cityId)
+        public async Task<IActionResult> Get()
         {
-            var result = await CountyLogic.Get(cityId);
+            var result = await CountyLogic.Get();
             return Ok(result);
         }
     }
