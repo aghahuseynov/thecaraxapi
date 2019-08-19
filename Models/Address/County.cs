@@ -17,5 +17,10 @@ namespace Models.Address
         [ForeignKey("City")]
         public int CityId { get; set; }
         public City City { get; set; }
+
+
+        //========== Navigation ===========
+        public ICollection<Customers.Customer> Customers { get; set; }
+
     }
 }

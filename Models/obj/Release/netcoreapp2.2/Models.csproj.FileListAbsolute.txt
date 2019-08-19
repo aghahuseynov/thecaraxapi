@@ -10,7 +10,6 @@ C:\Users\agha\source\repos\RouteaxRepo\thecarax\Models\obj\Release\netcoreapp2.2
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Release\netcoreapp2.2\Models.deps.json
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Release\netcoreapp2.2\Models.dll
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\bin\Release\netcoreapp2.2\Models.pdb
-C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Release\netcoreapp2.2\Models.csprojAssemblyReference.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Release\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Release\netcoreapp2.2\Models.AssemblyInfoInputs.cache
 C:\Users\Agha\Desktop\RouteaxRepo\thecaraxapi\Models\obj\Release\netcoreapp2.2\Models.AssemblyInfo.cs

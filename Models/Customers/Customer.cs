@@ -68,6 +68,9 @@ namespace Models.Customers
         public string CountryCode { get; set; }
         public Country Country { get; set; }
 
+        [ForeignKey("County")]
+        public int? CountyId { get; set; }
+        public County County { get; set; }
 
 
         public string CreatedBy { get; set; }
