@@ -44,7 +44,7 @@ namespace Services.Business.Cars
                                 NumberOfDoors = a.NumberOfDoors,
                                 Plate = a.Plate,
                                 Price = a.Price,
-                                VisualId = a.VisualId,
+                                VisualId = a.BrandModel.VisualId,
                                 UpdatedBy = a.UpdatedBy,
                                 UpdatedDateTime = a.UpdatedDateTime,
                                 Year = a.Year,
@@ -177,7 +177,7 @@ namespace Services.Business.Cars
                                 NumberOfDoors = a.NumberOfDoors,
                                 Plate = a.Plate,
                                 Price = a.Price,
-                                VisualId = a.VisualId,
+                                VisualId = a.BrandModel.VisualId,
                                 UpdatedBy = a.UpdatedBy,
                                 UpdatedDateTime = a.UpdatedDateTime,
                                 Year = a.Year
@@ -220,7 +220,7 @@ namespace Services.Business.Cars
                         NumberOfDoors = a.NumberOfDoors,
                         Plate = a.Plate,
                         Price = a.Price,
-                        VisualId = a.VisualId,
+                        VisualId = a.BrandModel.VisualId,
                         UpdatedBy = a.UpdatedBy,
                         UpdatedDateTime = a.UpdatedDateTime,
                         Year = a.Year
