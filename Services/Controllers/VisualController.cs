@@ -22,6 +22,20 @@ namespace Services.Controllers
             return File(dataBytes, "image/png");
         }
 
+        [HttpGet()]
+        [Route("/api/Visual/ModelImage/{visualId}")]
+        public async Task<IActionResult> GetModelImage (int visualId, int? width = null, int? height = null)
+        {
+            var visual = await VisualLogic.GetVisual(visualId);
+            if (visual == null)
+            {
+                return NotFound();
+            }
+            var dataBytes = VisualLogic.GetDataBytes(visual.Data, width, height);
+            return File(dataBytes, "image/png");
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody]Models.Visual model)
         {

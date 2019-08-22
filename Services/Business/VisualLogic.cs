@@ -38,6 +38,15 @@ namespace Services.Business
             }
         }
 
+        public static async Task<Models.Visual> GetVisual(int visualId)
+        {
+            using (var db = new DataAccess.CaraxEntitiy())
+            {
+                return await db.Visuals.FirstOrDefaultAsync(q => q.Id == visualId);
+            }
+        }
+
+
         public static byte[] Resizer(Image originalImage, Size newSize)
         {
             if (originalImage.Width < newSize.Width)
