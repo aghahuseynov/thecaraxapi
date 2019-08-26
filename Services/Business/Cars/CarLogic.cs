@@ -64,6 +64,13 @@ namespace Services.Business.Cars
 
             using (var db = new DataAccess.CaraxEntitiy())
             {
+                var isExistCar = await db.Cars.AnyAsync(q => q.Plate.ReplaceCarPlate().Contains(car.Plate.ReplaceCarPlate()));
+
+                if (isExistCar)
+                {
+                    return false;
+                }
+
                 db.Cars.Add(car);
                 return await db.SaveChangesAsync() > 0;
             }

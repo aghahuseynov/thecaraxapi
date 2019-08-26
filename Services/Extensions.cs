@@ -14,6 +14,11 @@ namespace Services
     {
         #region Methods
 
+        public static string ReplaceCarPlate (this string plate)
+        {
+            return plate.Replace("-", "").Replace(" ", "");
+        }
+
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable)
         {
             if (enumerable == null)
