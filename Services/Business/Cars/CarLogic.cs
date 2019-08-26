@@ -16,7 +16,7 @@ namespace Services.Business.Cars
             {
                 return await db.Cars.Include(a => a.Brand)
                              .Include(a => a.BrandModel)
-                             ?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance).
+                             ?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Maintenance == isMaintenance && !q.IsDeleted).
                             Select(a => new Models.Cars.Car
                             {
                                 DepartmentCode = a.DepartmentCode,
@@ -149,7 +149,7 @@ namespace Services.Business.Cars
             {
                 return db.Cars.Include(a => a.Brand)
                              .Include(a => a.BrandModel)
-                             ?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Id == carId).
+                             ?.Where(q => !q.IsDeleted && q.DepartmentCode == departmentCode && q.Id == carId && !q.IsDeleted).
                             Select(a => new Models.Cars.Car
                             {
                                 DepartmentCode = a.DepartmentCode,
